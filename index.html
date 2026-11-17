@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denise Zini · portfólio UGC</title>
+<meta name="description" content="Denise Zini, influencer digital e UGC creator de Mirassol-SP. Mais de 250 vídeos e 40 marcas atendidas.">
+
+<!-- Prévia do link no WhatsApp. TROCAR "MEU-LINK" pelo endereço do site depois de publicar. -->
+<meta property="og:title" content="Denise Zini · UGC creator">
+<meta property="og:description" content="Influencer digital e UGC creator. Mais de 250 vídeos e 40 marcas atendidas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://MEU-LINK/">
+<meta property="og:image" content="https://MEU-LINK/midia/capa.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:wght@400;700&family=Inter+Tight:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --papel:#FFFEFC; --grade:#EFEEE8; --linha:#E4E2D8;
+  --tinta:#0F1015; --texto:#2A2A26; --apoio:#5F5C50;
+  /* tons de amarelo das pastas */
+  --creme:#FFFBE6; --manteiga:#FFF5B1; --palha:#F8E9A2; --kraft:#EDD68E; --mostarda:#E4BE4C; --kraft-esc:#D7BC66; --carimbo:#97690C;
+  --areia:#E6DDA1; --oliva:#BDB684;
+  /* cinzas */
+  --cinza:#EEECE5; --cinza2:#D6D3C8; --metal:#8E8D88;
+  --r-video:10px;
+  --wrap:1160px; --gut:32px; --menu:68px;
+  --serif:'Bodoni Moda',Georgia,serif; --script:'Pinyon Script',cursive; --sans:'Inter Tight',system-ui,sans-serif; --mono:'Courier Prime','Courier New',monospace;
+  --sombra:0 1px 1px rgba(15,16,21,.05),0 16px 36px -20px rgba(15,16,21,.34);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+/* papel quadriculado no fundo de tudo */
+body{font-family:var(--sans);font-size:15px;line-height:1.6;color:var(--texto);-webkit-font-smoothing:antialiased;overflow-x:clip;
+  background-color:var(--papel);background-image:linear-gradient(var(--grade) 1px,transparent 1px),linear-gradient(90deg,var(--grade) 1px,transparent 1px);background-size:28px 28px}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{color:var(--tinta);font-weight:600;line-height:1.08}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+section{scroll-margin-top:calc(var(--menu) + 56px)}
+.sec{padding:72px 0}
+
+/* etiqueta e título */
+.tag{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--tinta);font-family:var(--mono);font-size:13px;font-weight:700;padding:5px 14px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 1px 2px rgba(15,16,21,.1)}
+.sec-title{font-family:var(--sans);font-size:clamp(30px,3.8vw,44px);font-weight:600;letter-spacing:-.045em;margin:0 0 28px}
+.ini{font-family:var(--script);font-weight:400;font-size:1.35em;letter-spacing:0;line-height:0;margin-right:.02em;position:relative;top:.08em}
+.sec-sub{color:var(--apoio);max-width:560px}
+.sec-head{margin-bottom:8px}
+.sec-head .sec-title{margin-top:16px;margin-bottom:12px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-size:15px;font-weight:600;white-space:nowrap;transition:background .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-p{background:var(--tinta);color:#fff}
+.btn-p:hover{background:#000}
+.btn-s{background:#fff;color:var(--tinta);border:1px solid var(--linha)}
+.btn-s:hover{border-color:var(--oliva)}
+.btn-sm{height:40px;padding:0 18px;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* lacunas listradas */
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px;
+  background:repeating-linear-gradient(135deg,#F6F5EF 0 12px,#ECEADF 12px 24px);border:1px dashed #CBC8B8;color:#4F4C42;font-size:13px;line-height:1.45}
+.ph svg{width:28px;height:28px;opacity:.7}
+.ph code{font-family:inherit;font-size:12px;background:#fff;border:1px solid var(--linha);padding:2px 8px;border-radius:999px}
+.gap{display:inline-block;background:repeating-linear-gradient(135deg,#F6F5EF 0 8px,#ECEADF 8px 16px);border:1px dashed #CBC8B8;color:#4F4C42;font-family:var(--sans);font-size:13px;font-weight:400;font-style:normal;letter-spacing:0;line-height:1.45;padding:4px 12px;border-radius:10px}
+
+/* ===== PEÇAS DE ESCRITÓRIO ===== */
+/* pasta com aba */
+.pasta{--cor:var(--manteiga);position:relative;background:var(--cor);border-radius:0 18px 18px 18px;padding:44px 44px 48px;margin-top:40px;box-shadow:var(--sombra);
+  background-image:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 120px)}
+.aba{position:absolute;bottom:100%;left:0;height:40px;display:inline-flex;align-items:center;gap:10px;padding:0 24px;background:var(--cor);border-radius:14px 14px 0 0;
+  font-family:var(--mono);font-weight:700;font-size:14px;line-height:1;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);white-space:nowrap}
+.aba.meio{left:50%;transform:translateX(-50%)}
+.aba.dir{left:auto;right:0}
+.pasta.aba-meio{border-radius:18px}
+.pasta.aba-dir{border-radius:18px 0 18px 18px}
+/* clipe preto */
+.clipe{position:absolute;display:block;width:30px;height:88px;z-index:3;pointer-events:none}
+.clipe svg{width:100%;height:100%}
+/* clipe de papel */
+.clipinho{position:absolute;display:block;width:22px;height:64px;z-index:3;pointer-events:none}
+.clipinho svg{width:100%;height:100%}
+/* fita adesiva */
+.fita{position:absolute;width:96px;height:28px;background:rgba(240,206,84,.55);box-shadow:0 1px 2px rgba(15,16,21,.08);z-index:3;pointer-events:none;
+  clip-path:polygon(3% 0,97% 5%,100% 45%,96% 100%,2% 95%,0 55%)}
+
+/* MENU */
+.menu{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;border-bottom:1px solid var(--linha);height:var(--menu)}
+.menu .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--tinta);letter-spacing:-.01em}
+.logo i{color:var(--mostarda);font-style:normal}
+.links{display:flex;align-items:center;gap:26px}
+.links a{font-size:14px;color:var(--apoio);font-weight:500}
+.links a:hover{color:var(--tinta)}
+.links a.btn,.links a.btn:hover{color:#fff}
+.menu-btn{display:none;height:40px;padding:0 16px;border:1px solid var(--linha);border-radius:999px;font-size:14px;font-weight:500;color:var(--tinta)}
+.menu-panel{display:none}
+
+/* 1. CAPA: pasta-dossiê */
+.capa{padding:calc(var(--menu) + 64px) 0 24px}
+.dossie{position:relative}
+.folha{position:absolute;border-radius:6px;box-shadow:var(--sombra)}
+.folha-1{top:-34px;right:5%;width:44%;height:70%;background:#fff;transform:rotate(2.4deg)}
+.folha-2{top:-18px;right:15%;width:36%;height:60%;background:var(--manteiga);transform:rotate(-1.8deg)}
+.folha-1::after{content:'';position:absolute;left:24px;right:40%;top:14px;height:2px;background:var(--cinza2);box-shadow:0 8px 0 var(--cinza2)}
+.pasta-capa{--cor:var(--palha);padding:56px 56px 56px;margin-top:0}
+.capa-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.capa h1{font-family:var(--sans);font-weight:600;font-size:clamp(58px,8vw,104px);letter-spacing:-.055em;line-height:.95;margin:30px 0 8px}
+.capa h1 .l1{display:block}
+.capa h1 .l2{display:block;padding-left:1.35em}
+.capa h1 .ini{font-size:1.3em;top:.1em;margin-right:-.02em}
+.provas{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 34px}
+.prova{background:#fff;padding:12px 18px 10px;border-radius:3px;box-shadow:0 1px 2px rgba(15,16,21,.1),0 6px 14px -8px rgba(15,16,21,.25);transform:rotate(-1.2deg)}
+.prova:nth-child(2){transform:rotate(1.4deg)}
+.prova strong{display:block;font-family:var(--serif);font-size:30px;font-weight:500;color:var(--tinta);letter-spacing:-.02em;line-height:1.1}
+.prova span{font-family:var(--mono);font-size:12px;color:var(--apoio);text-transform:uppercase;letter-spacing:.06em}
+/* carimbo redondo ao lado do nome */
+/* o carimbo fica centralizado no espaço que sobra à direita do nome */
+.nome-box{display:flex;align-items:center;margin-right:-46px}
+.nome-box h1{flex:none}
+.carimbo-capa{flex:none;margin:14px auto 0;width:150px;height:150px;color:#A3760C;transform:rotate(-14deg);opacity:.92;mix-blend-mode:multiply;pointer-events:none}
+.redes-capa{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+.redes-capa .rotulo{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio);margin-right:4px}
+.rede{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--tinta);display:grid;place-items:center;box-shadow:0 1px 2px rgba(15,16,21,.1),0 6px 14px -8px rgba(15,16,21,.3);transition:background .2s,color .2s}
+.rede:hover,.rede:focus-visible{background:var(--tinta);color:#fff}
+.rede svg{width:20px;height:20px}
+.ref{position:absolute;right:26px;bottom:18px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--apoio)}
+.polaroid{position:relative;background:#fff;padding:14px 14px 52px;border-radius:3px;box-shadow:var(--sombra)}
+.polaroid-capa{transform:rotate(2deg);max-width:440px;justify-self:end;width:100%}
+.polaroid .clipe{top:-33px;left:50%;margin-left:-15px}
+.polaroid figcaption{position:absolute;left:0;right:0;bottom:17px;text-align:center;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--apoio);text-transform:uppercase}
+.foto{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--grade);border-radius:2px}
+.foto img{width:100%;height:100%;object-fit:cover}
+/* o filtro retrô já vem aplicado na própria foto (midia/capa-retro.jpg), igual ao da foto do Sobre mim */
+.capa .foto img{object-position:50% 35%}
+
+/* 2. SOBRE: ficha cadastral */
+.pasta-sobre{--cor:var(--manteiga)}
+.ficha{position:relative;background:#fff;border-radius:4px;box-shadow:var(--sombra);padding:26px 32px 32px;max-width:920px}
+.ficha-topo{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta);border-bottom:2px solid var(--tinta);padding-bottom:10px;margin-bottom:6px}
+.ficha-corpo{display:grid;grid-template-columns:1fr 168px;gap:32px;align-items:start}
+.campos-ficha .campo{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 0;border-bottom:1px dashed var(--cinza2);font-family:var(--mono);font-size:16px;line-height:1.35}
+.campos-ficha dt{color:var(--apoio);text-transform:uppercase;font-size:12px;letter-spacing:.08em;padding-top:3px}
+.campos-ficha dd{color:var(--tinta)}
+.foto34{position:relative;background:#fff;padding:7px;border:1px solid var(--linha);box-shadow:0 6px 16px -10px rgba(15,16,21,.35);transform:rotate(2.5deg);margin-top:18px}
+.foto34 .foto{aspect-ratio:3/4}
+.grampo{position:absolute;top:-5px;left:50%;width:36px;height:10px;margin-left:-18px;border:2px solid var(--metal);border-bottom:0;border-radius:2px 2px 0 0;z-index:2}
+.ficha-bloco{margin-top:24px}
+.ficha-bloco h3{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--apoio);margin-bottom:8px}
+.sobre-txt p{margin-bottom:10px}
+.difs{list-style:none;display:grid;gap:12px}
+.difs li{display:flex;gap:12px;align-items:flex-start;color:var(--tinta);font-weight:500}
+.check{flex:none;width:24px;height:24px;border-radius:50%;background:var(--tinta);display:grid;place-items:center;margin-top:1px}
+.check svg{width:13px;height:13px}
+
+/* FAIXA DE MARCAS */
+.faixa{padding:12px 0;overflow:hidden}
+.faixa-trilho{display:flex;align-items:center;width:max-content;animation:rola 60s linear infinite}
+.faixa-item{display:flex;align-items:center;padding:0 18px}
+.bola{width:56px;height:56px;border-radius:50%;background:#fff;border:1px solid var(--linha);overflow:hidden;display:block;flex:none;box-shadow:0 4px 12px rgba(15,16,21,.08)}
+.bola img{width:100%;height:100%;object-fit:cover}
+.faixa-vazia{text-align:center}
+@keyframes rola{to{transform:translateX(-50%)}}
+
+/* CARDS DE VÍDEO */
+.vcard{min-width:0}
+.vbox{position:relative;aspect-ratio:9/16;border-radius:var(--r-video);overflow:hidden;background:#1B1C21;cursor:pointer}
+.vbox.vazio{cursor:default;background:none}
+.vbox video{width:100%;height:100%;object-fit:cover}
+.vbox .ph{border-radius:var(--r-video)}
+.vbox:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.play{position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;pointer-events:none}
+.play svg{width:14px;height:14px;margin-left:2px}
+.vinfo{padding-top:10px}
+.vinfo h3{font-size:15px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.vinfo p{font-family:var(--mono);font-size:12px;color:var(--apoio);margin-top:2px;letter-spacing:.02em}
+.arroba{color:inherit;text-decoration:underline;text-decoration-color:var(--mostarda);text-decoration-thickness:2px;text-underline-offset:3px;word-break:break-word}
+.arroba:hover{text-decoration-color:currentColor}
+.res{position:absolute;left:12px;bottom:12px;background:var(--manteiga);color:var(--tinta);font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px}
+
+/* 3. DESTAQUES: tira de fotos */
+.pasta-dest{--cor:var(--mostarda)}
+.tira{position:relative;background:#fff;padding:18px 18px 20px;border-radius:3px;box-shadow:var(--sombra);max-width:900px;margin:40px auto 0;transform:rotate(-.6deg)}
+.tira .fita{top:-14px;left:50%;width:120px;margin-left:-60px;transform:rotate(-4deg)}
+.tira-fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tira .vbox{border-radius:2px}
+.tira .vbox .ph{border-radius:2px}
+.tira .vinfo{text-align:center}
+.tira .vinfo h3{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:0}
+.forte-tag{position:absolute;left:10px;top:10px;z-index:2;background:var(--manteiga);color:var(--tinta);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:3px;pointer-events:none}
+
+/* 4. NICHOS: pastas empilhadas */
+.atalhos{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.atalhos a{border:1px solid var(--linha);border-radius:4px;padding:7px 14px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta);background:#fff}
+.atalhos a:hover{background:var(--manteiga);border-color:var(--areia)}
+.pilha{margin-top:64px}
+.pilha .nicho{margin-top:-6px;padding:30px 40px 60px;scroll-margin-top:calc(var(--menu) + 60px)}
+.pilha .nicho:first-child{margin-top:0}
+.pilha .nicho:last-child{padding-bottom:40px}
+.nicho-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.conta{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--apoio);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.setas{display:flex;gap:8px;flex:none}
+.seta{width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,16,21,.12);display:grid;place-items:center;background:#fff;color:var(--tinta)}
+.seta:hover:not(:disabled){background:var(--tinta);color:#fff}
+.seta:disabled{opacity:.35;cursor:default}
+.seta svg{width:16px;height:16px}
+.trilho{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.trilho::-webkit-scrollbar{display:none}
+.trilho.arrastando{scroll-snap-type:none;cursor:grabbing}
+.trilho.arrastando *{user-select:none}
+.trilho .vcard{flex:0 0 calc((100% - 48px)/4);scroll-snap-align:start}
+
+/* 5. FEEDBACKS: memorandos */
+.pasta-feed{--cor:var(--kraft)}
+.memos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.memo{position:relative;background:#fff;border-radius:3px;box-shadow:var(--sombra);padding:26px 24px 28px;display:flex;flex-direction:column;gap:14px;transform:rotate(-.8deg)}
+.memo:nth-child(2){transform:rotate(.7deg);margin-top:14px}
+.memo:nth-child(3){transform:rotate(-.4deg)}
+.memo .clipinho{top:-24px;right:24px}
+.memo-topo{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta);border-bottom:2px solid var(--tinta);padding-bottom:8px}
+.memo-dados{font-family:var(--mono);font-size:13px;line-height:1.45;display:grid;gap:3px;padding-bottom:12px;border-bottom:1px dashed var(--cinza2)}
+.memo-dados div{display:grid;grid-template-columns:62px 1fr;gap:6px}
+.memo-dados dt{color:var(--apoio);text-transform:uppercase;letter-spacing:.04em}
+.memo-dados dd{color:var(--tinta)}
+.memo blockquote{font-size:14.5px;color:var(--tinta);line-height:1.6}
+.carimbo{align-self:flex-end;margin-top:4px;font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--carimbo);border:2.5px solid currentColor;outline:1.5px solid currentColor;outline-offset:2px;border-radius:5px;padding:3px 12px;transform:rotate(-7deg);opacity:.9}
+.memo.vazio{border:1px dashed var(--cinza2);align-items:center;justify-content:center;text-align:center;min-height:220px;color:#4F4C42;font-size:14px;background:repeating-linear-gradient(135deg,#FFFFFF 0 12px,#FBF8E6 12px 24px)}
+.memo.vazio svg{width:26px;height:26px;opacity:.7}
+.atendidas{margin-top:48px;padding-top:32px;border-top:1px dashed rgba(15,16,21,.25);text-align:center}
+.atendidas h3{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--tinta);margin-bottom:24px;letter-spacing:.12em;text-transform:uppercase}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;max-width:880px;margin:0 auto}
+.logos .bola{width:64px;height:64px;box-shadow:0 4px 12px rgba(15,16,21,.08)}
+
+/* 6. CONTATO: envelope e carta */
+.envelope{position:relative;max-width:680px;margin:40px auto 0}
+.env-costas{position:absolute;left:0;right:0;bottom:0;height:300px;background:var(--kraft-esc);border-radius:10px;box-shadow:var(--sombra)}
+.env-costas::before{content:'';position:absolute;left:0;right:0;bottom:100%;height:120px;background:var(--kraft-esc);clip-path:polygon(0 100%,50% 0,100% 100%);filter:brightness(.97)}
+.carta{position:relative;z-index:1;margin:0 30px;background:#fff;border-radius:3px;box-shadow:0 2px 10px rgba(15,16,21,.1);padding:30px 40px 170px;text-align:center}
+.carta-topo{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio);border-bottom:1px dashed var(--cinza2);padding-bottom:12px;margin-bottom:28px;text-align:left}
+.carta .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,46px);letter-spacing:-.02em;margin-bottom:12px}
+.carta .sec-title .ini{font-size:1.5em}
+.carta .sec-sub{margin:0 auto}
+.carta .btns{justify-content:center;margin-top:26px}
+.env-frente{position:relative;z-index:2;margin-top:-150px;height:220px;border-radius:0 0 10px 10px;
+  background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(15,16,21,.10) 50%,transparent calc(50% + 1px)) left bottom/50% 100% no-repeat,
+             linear-gradient(to top left,transparent calc(50% - 1px),rgba(15,16,21,.10) 50%,transparent calc(50% + 1px)) right bottom/50% 100% no-repeat,
+             var(--kraft);
+  clip-path:polygon(0 0,50% 50%,100% 0,100% 100%,0 100%)}
+.selo{position:absolute;right:28px;bottom:24px;background:var(--manteiga);border:2px dashed var(--tinta);padding:8px 14px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--tinta);transform:rotate(4deg)}
+.form{max-width:520px;margin:32px auto 0;text-align:left;border-top:1px dashed var(--cinza2);padding-top:24px}
+.form h3{font-family:var(--mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.form > p{font-size:14px;color:var(--apoio);margin-bottom:18px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.campos label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta)}
+.campos label.cheio{grid-column:1/-1}
+.campos input{font:inherit;font-family:var(--sans);font-size:15px;letter-spacing:0;text-transform:none;height:46px;padding:0 14px;border:0;border-bottom:1.5px solid var(--tinta);border-radius:0;color:var(--tinta);background:var(--creme)}
+.campos input:focus{outline:2px solid var(--mostarda);outline-offset:1px}
+.gotcha{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn{margin-top:18px;width:100%}
+.form-msg{text-align:center;padding:12px 0}
+.form-msg strong{display:block;font-size:20px;color:var(--tinta);letter-spacing:-.02em;margin-bottom:6px}
+.form-msg p{color:var(--apoio);font-size:14px;margin-bottom:16px}
+.duvidas{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px;text-align:left}
+.duvida{border-top:1px solid var(--tinta);padding-top:18px}
+.duvida h3{font-size:15px;letter-spacing:-.01em;line-height:1.35;margin-bottom:6px}
+.duvida p{font-size:14px;color:var(--texto)}
+.rodape{background:var(--tinta);color:#C9C7BE;padding:28px 0 96px}
+.rodape .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px}
+.rodape b{color:#fff;font-family:var(--serif);font-weight:500;font-size:18px}
+.redes{display:flex;gap:16px;flex-wrap:wrap}
+.redes a{color:#fff;font-weight:500}
+.redes a:hover{color:var(--manteiga)}
+
+/* WHATSAPP FIXO */
+.zap{position:fixed;right:20px;bottom:20px;z-index:60;width:52px;height:52px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(15,16,21,.22);border:2px solid var(--manteiga)}
+.zap svg{width:24px;height:24px}
+
+/* PLAYER */
+.player{position:fixed;inset:0;z-index:100;background:rgba(10,10,12,.88);display:none;align-items:center;justify-content:center;padding:24px}
+.player.aberto{display:flex}
+.player video{max-height:88vh;max-width:min(92vw,520px);aspect-ratio:9/16;border-radius:var(--r-video);background:#000}
+.fechar{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--tinta);display:grid;place-items:center}
+.fechar svg{width:18px;height:18px}
+
+/* TABLET */
+@media (max-width:900px){
+  :root{--gut:24px}
+  .links{display:none}
+  .menu-btn{display:inline-flex;align-items:center}
+  .menu-panel{position:absolute;top:var(--menu);left:0;right:0;background:#fff;border-bottom:1px solid var(--linha);padding:8px var(--gut) 20px}
+  .menu-panel.aberto{display:block}
+  .menu-panel a{display:block;padding:12px 0;font-size:15px;color:var(--tinta);border-bottom:1px solid var(--linha)}
+  .menu-panel a.btn{display:flex;border:0;margin-top:16px;color:#fff}
+  .capa-grid{grid-template-columns:1fr;gap:64px}
+  .nome-box{margin-right:0}
+  .polaroid-capa{justify-self:start;max-width:380px}
+  .pasta{padding:40px 32px 44px}
+  .pasta-capa{padding:48px 32px 56px}
+  .pilha .nicho{padding:28px 28px 56px}
+  .trilho .vcard{flex-basis:calc((100% - 16px)/2)}
+  .memos{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .memo:nth-child(2){margin-top:0}
+  .duvidas{grid-template-columns:1fr 1fr}
+}
+/* CELULAR */
+@media (max-width:520px){
+  :root{--gut:16px}
+  .sec{padding:56px 0}
+  .capa{padding-top:calc(var(--menu) + 56px)}
+  .pasta{padding:32px 18px 36px;border-radius:0 14px 14px 14px}
+  .pasta.aba-meio{border-radius:14px}
+  .pasta.aba-dir{border-radius:14px 0 14px 14px}
+  .aba{height:34px;padding:0 14px;font-size:12px}
+  .pasta-capa{padding:36px 18px 44px}
+  .tag{font-size:11px;padding:5px 10px;letter-spacing:.03em}
+  .provas{gap:10px}
+  .folha-1{top:-26px;width:52%}
+  .folha-2{top:-14px;width:40%;right:24%}
+  .capa h1 .l2{padding-left:1.1em}
+  .nome-box{margin-right:0}
+  .carimbo-capa{width:86px;height:86px;margin-top:40px}
+  .prova{padding:10px 14px 8px}
+  .prova strong{font-size:24px}
+  .prova span{font-size:11px}
+  .btns .btn{flex:1 1 100%}
+  .ref{display:none}
+  .polaroid-capa{max-width:100%;transform:rotate(1.5deg)}
+  .ficha{padding:20px 16px 24px}
+  .ficha-topo{font-size:11px}
+  .ficha-corpo{grid-template-columns:1fr;gap:8px}
+  .foto34{order:-1;width:150px;margin:18px auto 6px}
+  .campos-ficha .campo{grid-template-columns:1fr;gap:2px;font-size:15px}
+  .tira{padding:12px 0 14px;margin-top:36px}
+  .tira-fotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:0 12px;scrollbar-width:none}
+  .tira-fotos::-webkit-scrollbar{display:none}
+  .tira .vcard{flex:0 0 76%;scroll-snap-align:center}
+  .pilha .nicho{padding:24px 16px 52px}
+  .pilha .nicho:last-child{padding-bottom:32px}
+  .trilho .vcard{flex-basis:76%}
+  .memo{padding:22px 18px 24px}
+  .carta{margin:0 10px;padding:24px 18px 170px}
+  .carta-topo{flex-direction:column;gap:2px}
+  .env-costas{height:260px}
+  .env-costas::before{height:80px}
+  .env-frente{height:200px}
+  .selo{right:16px;bottom:18px;font-size:12px}
+  .campos{grid-template-columns:1fr}
+  .duvidas{grid-template-columns:1fr;gap:20px}
+  .faixa-item .bola{width:48px;height:48px}
+  .logos{gap:12px}
+  .logos .bola{width:52px;height:52px}
+  .zap{right:14px;bottom:14px;width:48px;height:48px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="menu">
+  <div class="wrap">
+    <a href="#topo" class="logo" id="logo"></a>
+    <nav class="links" aria-label="Menu">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#destaques">Destaques</a>
+      <a href="#nichos">Nichos</a>
+      <a href="#marcas">Feedbacks</a>
+      <a href="#contato">Contato</a>
+      <a href="#contato" class="btn btn-p btn-sm">Falar comigo</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+  </div>
+  <div class="menu-panel" id="menuPanel">
+    <a href="#sobre">Sobre mim</a>
+    <a href="#destaques">Destaques</a>
+    <a href="#nichos">Nichos</a>
+    <a href="#marcas">Feedbacks</a>
+    <a href="#contato">Contato</a>
+    <a href="#contato" class="btn btn-p">Falar comigo</a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- 1. CAPA: pasta-dossiê -->
+  <section class="capa">
+    <div class="wrap">
+      <div class="dossie">
+        <div class="folha folha-1" aria-hidden="true"></div>
+        <div class="folha folha-2" aria-hidden="true"></div>
+        <div class="pasta pasta-capa">
+          <span class="aba" id="capaAba"></span>
+          <div class="capa-grid">
+            <div>
+              <span class="tag">✦ UGC creator · Influencer digital</span>
+              <div class="nome-box">
+                <h1 id="nome"></h1>
+                <svg class="carimbo-capa" viewBox="0 0 160 160" role="img" aria-label="Carimbo: alto em criatividade">
+                  <defs>
+                    <path id="voltaCarimbo" d="M80 80m-55 0a55 55 0 1 1 110 0a55 55 0 1 1-110 0"/>
+                    <!-- textura de carimbo falhado: pontinhos sem tinta + manchas mais fracas + borda tremida -->
+                    <filter id="falhaCarimbo" x="-5%" y="-5%" width="110%" height="110%">
+                      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="4" result="fino"/>
+                      <feColorMatrix in="fino" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -12 0 0 0 8" result="pontos"/>
+                      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="9" result="grosso"/>
+                      <feColorMatrix in="grosso" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="manchas"/>
+                      <feComposite in="pontos" in2="manchas" operator="arithmetic" k1="1" result="mascara"/>
+                      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="1" seed="2" result="ondas"/>
+                      <feDisplacementMap in="SourceGraphic" in2="ondas" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="torto"/>
+                      <feComposite in="torto" in2="mascara" operator="in"/>
+                    </filter>
+                  </defs>
+                  <g filter="url(#falhaCarimbo)">
+                  <circle cx="80" cy="80" r="77" fill="none" stroke="currentColor" stroke-width="3.5"/>
+                  <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <circle cx="80" cy="80" r="41" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                  <text font-family="'Courier Prime',monospace" font-weight="700" font-size="19" letter-spacing="1" fill="currentColor"><textPath href="#voltaCarimbo" textLength="338" lengthAdjust="spacing">ALTO EM CRIATIVIDADE ★</textPath></text>
+                  <path d="M80 58l5.2 13.6L99.5 73l-11.2 9 3.9 14.2L80 88.2l-12.2 8 3.9-14.2-11.2-9 14.3-1.4z" fill="currentColor"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="provas" id="provas"></div>
+              <div class="btns">
+                <a href="#destaques" class="btn btn-p">Ver meus melhores vídeos</a>
+                <a href="#contato" class="btn btn-s">Falar comigo</a>
+              </div>
+              <nav class="redes-capa" id="redesCapa" aria-label="Minhas redes sociais"></nav>
+            </div>
+            <figure class="polaroid polaroid-capa">
+              <span class="clipe" data-clipe></span>
+              <div class="foto" id="fotoCapa"></div>
+              <figcaption>Sua creator</figcaption>
+            </figure>
+          </div>
+          <span class="ref" aria-hidden="true">REF. UGC · DZ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SOBRE MIM: ficha cadastral -->
+  <section class="sec" id="sobre">
+    <div class="wrap">
+      <div class="pasta pasta-sobre">
+        <span class="aba">Sobre mim</span>
+        <h2 class="sec-title" id="sobreTitulo"></h2>
+        <article class="ficha">
+          <div class="ficha-topo"><span>Ficha nº 001</span><span>Creator UGC</span></div>
+          <div class="ficha-corpo">
+            <dl class="campos-ficha" id="fichaCampos"></dl>
+            <figure class="foto34"><span class="grampo" aria-hidden="true"></span><div class="foto" id="fotoSobre"></div></figure>
+          </div>
+          <div class="ficha-bloco"><h3>Obs.:</h3><div class="sobre-txt" id="sobreTexto"></div></div>
+          <div class="ficha-bloco"><h3>Diferenciais:</h3><ul class="difs" id="difs"></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- faixa das marcas atendidas (não é seção) -->
+  <div class="faixa" id="faixa" aria-label="Marcas que eu já atendi"></div>
+
+  <!-- 3. DESTAQUES: tira de fotos -->
+  <section class="sec" id="destaques">
+    <div class="wrap">
+      <div class="pasta pasta-dest">
+        <span class="aba">Destaques</span>
+        <h2 class="sec-title"><span class="ini">M</span>eus melhores vídeos</h2>
+        <div class="tira">
+          <span class="fita" aria-hidden="true"></span>
+          <div class="tira-fotos" id="dest"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CONTEÚDO POR NICHOS: pastas empilhadas -->
+  <section class="sec" id="nichos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Nichos</span>
+        <h2 class="sec-title"><span class="ini">A</span>che o vídeo do seu nicho</h2>
+        <nav class="atalhos" id="atalhos" aria-label="Atalhos dos nichos"></nav>
+      </div>
+      <div class="pilha" id="paginasNicho"></div>
+    </div>
+  </section>
+
+  <!-- 5. FEEDBACKS: memorandos -->
+  <section class="sec" id="marcas">
+    <div class="wrap">
+      <div class="pasta pasta-feed">
+        <span class="aba">Feedbacks</span>
+        <h2 class="sec-title"><span class="ini">F</span>eedbacks de marcas</h2>
+        <div class="memos" id="elogios"></div>
+        <div class="atendidas">
+          <h3>Marcas que eu já atendi</h3>
+          <div class="logos" id="logos"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTATO: envelope -->
+  <section class="sec contato" id="contato">
+    <div class="wrap">
+      <div class="envelope">
+        <div class="env-costas" aria-hidden="true"></div>
+        <div class="carta">
+          <div class="carta-topo"><span id="cartaDe"></span><span>Para: sua marca</span></div>
+          <h2 class="sec-title"><span class="ini">V</span>amos trabalhar juntos?</h2>
+          <div class="btns" id="contatoBtns"></div>
+          <div id="formBox"></div>
+        </div>
+        <div class="env-frente" aria-hidden="true"><span class="selo" id="selo"></span></div>
+      </div>
+      <div class="duvidas" id="duvidas"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap"><div><b id="rodapeNome"></b><br>Influencer digital &amp; UGC creator</div><nav class="redes" id="redes" aria-label="Minhas redes"></nav></div>
+</footer>
+
+<a class="zap" id="zap" target="_blank" rel="noopener" aria-label="Falar comigo no WhatsApp"></a>
+
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Vídeo">
+  <button class="fechar" id="fechar" aria-label="Fechar vídeo"></button>
+  <video id="playerVideo" controls playsinline></video>
+</div>
+
+<script>
+/* ====================================================================
+   COMO FUNCIONA: a página inteira é montada a partir do objeto DADOS,
+   que fica lá no fim deste arquivo. Pra trocar qualquer coisa, mexa só nele.
+   ==================================================================== */
+
+const ICONES = {
+  zap:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91A9.86 9.86 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>',
+  insta:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  tiktok:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="#0F1015" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>',
+  foto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>',
+  video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M10 9v6l5-3z" fill="currentColor"/></svg>',
+  aspas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 21c3 0 6-1.5 6-6V5H4v8h6M14 21c3 0 6-1.5 6-6V5h-6v8h6"/></svg>',
+  esq:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>',
+  dir:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  // clipe de papel preto (capa)
+  // A borda do papel fica na altura y=26 do desenho: a perna de trás some ali
+  // e a parte da frente faz sombra no papel, como um clipe preso de verdade.
+  clipe:'<svg viewBox="0 0 24 70" aria-hidden="true"><path d="M10 33v19a4 4 0 0 0 8 0V27" fill="none" stroke="#0F1015" stroke-opacity=".2" stroke-width="3.2" stroke-linecap="round" transform="translate(1.4 1.8)"/><path d="M10 33v19a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v16" fill="none" stroke="#0F1015" stroke-width="2.6" stroke-linecap="round"/><path d="M17.4 12v38" stroke="#fff" stroke-opacity=".25" stroke-width=".7"/></svg>',
+  // clipe de papel prateado (feedbacks)
+  clipinho:'<svg viewBox="0 0 24 70" aria-hidden="true"><path d="M10 33v19a4 4 0 0 0 8 0V27" fill="none" stroke="#0F1015" stroke-opacity=".18" stroke-width="3.2" stroke-linecap="round" transform="translate(1.4 1.8)"/><path d="M10 33v19a4 4 0 0 0 8 0V10a7 7 0 0 0-14 0v16" fill="none" stroke="#9A9994" stroke-width="2.6" stroke-linecap="round"/><path d="M17.3 12v38M4.7 10v15" stroke="#fff" stroke-opacity=".75" stroke-width=".8"/></svg>'
+};
+
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const slug = (t) => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+const lacuna = (dica) => '<span class="gap">' + esc(dica) + '</span>';
+const ph = (icone, dica, caminho) => '<div class="ph">' + ICONES[icone] + '<span>' + esc(dica) + '</span>' + (caminho ? '<code>' + esc(caminho) + '</code>' : '') + '</div>';
+const podeHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const poucoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ehLinkDeRede = (v) => /instagram\.com|tiktok\.com|drive\.google\.com|youtu/i.test(v || '');
+const comInicial = (t) => { t = String(t || ''); return t ? '<span class="ini">' + esc(t[0]) + '</span>' + esc(t.slice(1)) : ''; };
+const doisDigitos = (n) => String(n).padStart(2, '0');
+
+function primeiroNome(){ return (DADOS.nome || '').trim().split(/\s+/)[0] || ''; }
+
+function linkWhats(){
+  const num = String(DADOS.whatsapp || '').replace(/\D/g, '');
+  if (!num) return '';
+  const completo = num.length <= 11 ? '55' + num : num;
+  const msg = 'Oi, ' + primeiroNome() + '! Vi seu portfólio e quero conversar sobre vídeos pra minha marca.';
+  return 'https://wa.me/' + completo + '?text=' + encodeURIComponent(msg);
+}
+function linkEmail(){
+  if (!DADOS.email) return '';
+  return 'mailto:' + DADOS.email + '?subject=' + encodeURIComponent('Vídeos UGC pra minha marca') +
+    '&body=' + encodeURIComponent('Oi, ' + primeiroNome() + '! Vi seu portfólio e quero conversar sobre vídeos pra minha marca.');
+}
+function botaoContatoPrincipal(classe){
+  const w = linkWhats();
+  if (w) return '<a class="btn ' + classe + '" href="' + esc(w) + '" target="_blank" rel="noopener">' + ICONES.zap + 'Chamar no WhatsApp</a>';
+  const e = linkEmail();
+  return '<a class="btn ' + classe + '" href="' + esc(e) + '">' + ICONES.mail + 'Mandar e-mail</a>';
+}
+
+/* ---------- vídeo: card, hover e player ---------- */
+function videoSrc(v){ return v ? v + (v.includes('#') ? '' : '#t=0.1') : ''; }
+
+function cardVideo(item, opcoes){
+  opcoes = opcoes || {};
+  const temVideo = item.video && !ehLinkDeRede(item.video);
+  let caixa;
+  if (temVideo){
+    const auto = opcoes.auto ? ' muted autoplay loop playsinline' : ' muted loop playsinline';
+    const poster = item.capa ? ' poster="' + esc(item.capa) + '"' : '';
+    caixa = '<div class="vbox" role="button" tabindex="0" data-video="' + esc(item.video) + '" data-titulo="' + esc(item.titulo || 'video') + '" aria-label="Abrir vídeo ' + esc(item.titulo || '') + '">' +
+      (opcoes.extra || '') +
+      '<video src="' + esc(videoSrc(item.video)) + '" preload="metadata"' + poster + auto + (opcoes.auto ? ' data-auto="1"' : '') + '></video>' +
+      (item.res ? '<span class="res">' + esc(item.res) + '</span>' : '') +
+      '<span class="play">' + ICONES.play + '</span></div>';
+  } else {
+    caixa = '<div class="vbox vazio">' + (opcoes.extra || '') + ph('video', opcoes.dica || 'Vídeo vertical 9:16 em .mp4', opcoes.caminho) + '</div>';
+  }
+  // embaixo do vídeo: o @ da marca (com link pro Instagram); sem @, aparece o título
+  const arroba = String(item.marca || '').trim().replace(/^@/, '');
+  const titulo = arroba
+    ? '<a class="arroba" href="https://www.instagram.com/' + encodeURIComponent(arroba) + '/" target="_blank" rel="noopener">@' + esc(arroba) + '</a>'
+    : (item.titulo ? esc(item.titulo) : lacuna('título curto'));
+  const linha = opcoes.linha != null ? opcoes.linha : (item.formato ? esc(item.formato) : '');
+  return '<article class="vcard' + (opcoes.classe ? ' ' + opcoes.classe : '') + '">' + caixa +
+    '<div class="vinfo"><h3>' + titulo + '</h3>' + (linha ? '<p>' + linha + '</p>' : '') + '</div></article>';
+}
+
+function ligarVideos(raiz){
+  raiz.querySelectorAll('.vbox[data-video]').forEach(box => {
+    const v = box.querySelector('video');
+    if (podeHover && !v.dataset.auto){
+      box.addEventListener('mouseenter', () => { v.muted = true; v.play().catch(()=>{}); });
+      box.addEventListener('mouseleave', () => { v.pause(); });
+    }
+    box.addEventListener('click', () => abrirPlayer(box.dataset.video, box.dataset.titulo));
+    box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirPlayer(box.dataset.video, box.dataset.titulo); } });
+  });
+}
+
+let focoAntes = null;
+function abrirPlayer(src, titulo){
+  const p = $('#player'), pv = $('#playerVideo');
+  focoAntes = document.activeElement;
+  document.querySelectorAll('.vbox video').forEach(v => v.pause());
+  pv.src = src; pv.muted = false;
+  p.classList.add('aberto');
+  document.body.style.overflow = 'hidden';
+  pv.play().catch(()=>{});
+  $('#fechar').focus();
+  // métrica: qual vídeo foi visto
+  try {
+    if (window.umami && typeof window.umami.track === 'function'){
+      window.umami.track(('video-' + slug(titulo)).slice(0, 50));
+    }
+  } catch(e){}
+}
+function fecharPlayer(){
+  const p = $('#player'), pv = $('#playerVideo');
+  if (!p.classList.contains('aberto')) return;
+  pv.pause(); pv.removeAttribute('src'); pv.load();
+  p.classList.remove('aberto');
+  document.body.style.overflow = '';
+  const a = $('#dest video[data-auto]');
+  if (a && !poucoMovimento) a.play().catch(()=>{});
+  if (focoAntes) focoAntes.focus();
+}
+
+/* ---------- carrossel: setas e arrastar ---------- */
+function ligarCarrossel(trilho, btnEsq, btnDir){
+  const passo = () => trilho.clientWidth;
+  const atualiza = () => {
+    btnEsq.disabled = trilho.scrollLeft <= 4;
+    btnDir.disabled = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 4;
+  };
+  btnEsq.addEventListener('click', () => trilho.scrollBy({left:-passo(), behavior: poucoMovimento ? 'auto' : 'smooth'}));
+  btnDir.addEventListener('click', () => trilho.scrollBy({left: passo(), behavior: poucoMovimento ? 'auto' : 'smooth'}));
+  trilho.addEventListener('scroll', atualiza, {passive:true});
+  window.addEventListener('resize', atualiza);
+  atualiza();
+
+  // arrastar com o mouse (no celular o dedo já desliza sozinho)
+  let ini = null, moveu = false;
+  trilho.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    ini = {x:e.clientX, s:trilho.scrollLeft}; moveu = false;
+  });
+  window.addEventListener('pointermove', e => {
+    if (!ini) return;
+    const dx = e.clientX - ini.x;
+    if (Math.abs(dx) > 6){ moveu = true; trilho.classList.add('arrastando'); }
+    if (moveu) trilho.scrollLeft = ini.s - dx;
+  });
+  window.addEventListener('pointerup', () => {
+    if (!ini) return;
+    ini = null;
+    if (moveu){
+      const card = trilho.querySelector('.vcard');
+      const largura = card ? card.offsetWidth + 16 : passo();
+      const alvo = Math.round(trilho.scrollLeft / largura) * largura;
+      trilho.classList.remove('arrastando');
+      trilho.scrollTo({left: alvo, behavior: poucoMovimento ? 'auto' : 'smooth'});
+    }
+  });
+  trilho.addEventListener('click', e => { if (moveu){ e.stopPropagation(); e.preventDefault(); moveu = false; } }, true);
+  trilho.addEventListener('dragstart', e => e.preventDefault());
+}
+
+/* ---------- monta a página ---------- */
+function montar(){
+  const D = DADOS;
+
+  // clipes desenhados
+  document.querySelectorAll('[data-clipe]').forEach(el => { el.innerHTML = ICONES.clipe; });
+
+  // menu e rodapé
+  $('#logo').innerHTML = esc(D.nome) + '<i>.</i>';
+  $('#rodapeNome').textContent = D.nome;
+  $('#menuBtn').addEventListener('click', () => {
+    const aberto = $('#menuPanel').classList.toggle('aberto');
+    $('#menuBtn').setAttribute('aria-expanded', aberto);
+    $('#menuBtn').textContent = aberto ? 'Fechar' : 'Menu';
+  });
+  $('#menuPanel').querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    $('#menuPanel').classList.remove('aberto'); $('#menuBtn').textContent = 'Menu'; $('#menuBtn').setAttribute('aria-expanded', false);
+  }));
+  const redes = [];
+  if (D.instagram) redes.push('<a href="https://instagram.com/' + esc(D.instagram.replace('@','')) + '" target="_blank" rel="noopener">Instagram</a>');
+  if (D.tiktok) redes.push('<a href="https://www.tiktok.com/@' + esc(D.tiktok.replace('@','')) + '" target="_blank" rel="noopener">TikTok</a>');
+  if (D.youtube) redes.push('<a href="https://www.youtube.com/@' + esc(D.youtube.replace('@','')) + '" target="_blank" rel="noopener">YouTube</a>');
+  $('#redes').innerHTML = redes.join('');
+
+  // botões das redes na capa (só aparecem as redes preenchidas em DADOS)
+  const limpa = (t) => String(t || '').replace('@', '');
+  const redesCapa = [
+    D.instagram && { nome: 'Instagram', icone: ICONES.insta, url: 'https://instagram.com/' + limpa(D.instagram) },
+    D.tiktok && { nome: 'TikTok', icone: ICONES.tiktok, url: 'https://www.tiktok.com/@' + limpa(D.tiktok) },
+    D.youtube && { nome: 'YouTube', icone: ICONES.youtube, url: 'https://www.youtube.com/@' + limpa(D.youtube) }
+  ].filter(Boolean);
+  if (redesCapa.length){
+    $('#redesCapa').innerHTML = '<span class="rotulo">Me acompanhe</span>' + redesCapa.map(r =>
+      '<a class="rede" href="' + esc(r.url) + '" target="_blank" rel="noopener" aria-label="Meu ' + r.nome + '" title="' + r.nome + '">' + r.icone + '</a>').join('');
+  } else $('#redesCapa').remove();
+
+  // 1. capa
+  const partes = (D.nome || '').trim().split(/\s+/);
+  $('#capaAba').textContent = D.ano || 'Portfólio';
+  $('#nome').setAttribute('aria-label', D.nome);
+  $('#nome').innerHTML = '<span aria-hidden="true"><span class="l1">' + comInicial(partes[0]) + '</span><span class="l2">' + comInicial(partes.slice(1).join(' ')) + '</span></span>';
+  $('#provas').innerHTML = D.provas.map(p => '<div class="prova"><strong>' + esc(p.numero) + '</strong><span>' + esc(p.texto) + '</span></div>').join('');
+  $('#fotoCapa').innerHTML = D.fotoCapa
+    ? '<img src="' + esc(D.fotoCapa) + '" alt="' + esc(D.nome) + '" fetchpriority="high">'
+    : ph('foto', 'Retrato com rosto, luz natural e ambiente real. Sem selfie: a capa mostra o seu nível', 'midia/capa.jpg');
+
+  // 2. sobre: ficha cadastral
+  $('#sobreTitulo').innerHTML = comInicial('Prazer, eu sou a ' + primeiroNome() + '.');
+  $('#fichaCampos').innerHTML = (D.ficha || []).map(f => '<div class="campo"><dt>' + esc(f.campo) + ':</dt><dd>' + esc(f.valor) + '</dd></div>').join('');
+  $('#sobreTexto').innerHTML = D.sobreTexto
+    ? D.sobreTexto.split(/\n\s*\n/).map(p => '<p>' + esc(p) + '</p>').join('')
+    : '<p>' + lacuna('Em 3 ou 4 linhas, na primeira pessoa: quem você é, onde mora, sua rotina e por que as marcas do seu nicho combinam com você') + '</p>';
+  $('#fotoSobre').innerHTML = D.fotoSobre
+    ? '<img src="' + esc(D.fotoSobre) + '" alt="' + esc(D.nome) + ' no dia a dia" loading="lazy">'
+    : ph('foto', 'Foto sua no dia a dia', 'midia/sobre.jpg');
+  $('#difs').innerHTML = D.diferenciais.map(t => '<li><span class="check">' + ICONES.check + '</span><span>' + esc(t) + '</span></li>').join('');
+
+  // faixa das marcas: só aparecem as marcas que têm logo
+  const marcas = (D.marcas || []).filter(m => m && m.logo);
+  const bola = m => '<span class="bola"><img src="' + esc(m.logo) + '" alt="' + esc(m.nome || 'marca') + '" title="' + esc(m.nome || '') + '" loading="lazy"></span>';
+  if (marcas.length){
+    const fila = marcas.map(m => '<div class="faixa-item">' + bola(m) + '</div>').join('');
+    $('#faixa').innerHTML = '<div class="faixa-trilho">' + fila + '<div style="display:contents" aria-hidden="true">' + fila.replace(/alt="[^"]*"/g, 'alt=""') + '</div></div>';
+  } else {
+    $('#faixa').innerHTML = '<div class="wrap faixa-vazia">' + lacuna('Faixa das marcas que você já atendeu: coloque os logos em midia/logos e escreva o caminho em DADOS.marcas') + '</div>';
+  }
+
+  // 3. destaques: tira de fotos
+  $('#dest').innerHTML = D.destaques.slice(0, 3).map((d, i) => cardVideo(d, {
+    auto: i === 0,
+    classe: i === 0 ? 'forte' : '',
+    extra: i === 0 ? '<span class="forte-tag">✦ Top 1</span>' : '',
+    dica: i === 0 ? 'Os melhores na frente, não os mais recentes. O nº 1 é o mais forte' : 'Os melhores na frente, não os mais recentes',
+    caminho: 'midia/destaques/' + (i + 1) + '.mp4',
+    linha: [d.nicho, d.formato].filter(Boolean).map(esc).join(' · ')
+  })).join('');
+  ligarVideos($('#dest'));
+  const primeiro = $('#dest video[data-auto]');
+  if (primeiro){
+    if (poucoMovimento){ primeiro.removeAttribute('autoplay'); primeiro.pause(); }
+    else if ('IntersectionObserver' in window){
+      new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting){ if (!$('#player').classList.contains('aberto')){ primeiro.muted = true; primeiro.play().catch(()=>{}); } } else primeiro.pause();
+      }), {threshold:.35}).observe(primeiro);
+    }
+  }
+
+  // 4. nichos: uma pasta por nicho, empilhadas, com carrossel
+  const cores = ['var(--manteiga)', 'var(--kraft)', 'var(--creme)', 'var(--cinza)', 'var(--palha)'];
+  const lados = ['esq', 'meio', 'dir'];
+  $('#atalhos').innerHTML = D.nichos.map(n => '<a href="#nicho-' + slug(n.nome) + '">' + esc(n.nome) + '</a>').join('');
+  $('#paginasNicho').innerHTML = D.nichos.map((n, idx) => {
+    const s = slug(n.nome);
+    const videos = (n.videos || []).filter(v => v && v.video && !ehLinkDeRede(v.video));
+    const total = videos.length;
+    let cards = videos.map(v => cardVideo(v)).join('');
+    for (let i = total; total < 3 && i < 4; i++){
+      cards += cardVideo({}, {dica:'Vídeo de ' + n.nome + ' em 9:16 (.mp4)', caminho:'midia/nichos/' + s + '/' + (i + 1) + '.mp4', linha:''});
+    }
+    const lado = lados[idx % lados.length];
+    return '<div class="pasta nicho aba-' + lado + '" id="nicho-' + s + '" style="--cor:' + cores[idx % cores.length] + '">' +
+      '<h3 class="aba ' + lado + '">' + esc(n.nome) + '</h3>' +
+      '<div class="nicho-top"><span class="conta">' + doisDigitos(total) + (total === 1 ? ' vídeo' : ' vídeos') +
+      (total < 3 ? '<span class="tag" title="Com menos de 3 vídeos, tire o nicho">mínimo 3 vídeos</span>' : '') + '</span>' +
+      '<div class="setas"><button class="seta" aria-label="Vídeos anteriores de ' + esc(n.nome) + '">' + ICONES.esq + '</button>' +
+      '<button class="seta" aria-label="Próximos vídeos de ' + esc(n.nome) + '">' + ICONES.dir + '</button></div></div>' +
+      '<div class="trilho">' + cards + '</div></div>';
+  }).join('');
+  $('#paginasNicho').querySelectorAll('.nicho').forEach(bl => {
+    const b = bl.querySelectorAll('.seta');
+    ligarCarrossel(bl.querySelector('.trilho'), b[0], b[1]);
+  });
+  ligarVideos($('#paginasNicho'));
+
+  // 5. feedbacks: memorandos carimbados
+  const els = (D.elogios || []).slice(0, 3);
+  while (els.length < 3) els.push({});
+  $('#elogios').innerHTML = els.map(e => e.texto
+    ? '<article class="memo"><span class="clipinho">' + ICONES.clipinho + '</span>' +
+        '<dl class="memo-dados"><div><dt>De:</dt><dd>' + esc(e.marca) + '</dd></div><div><dt>Para:</dt><dd>' + esc(D.nome) + '</dd></div>' +
+        (e.detalhe ? '<div><dt>Ref.:</dt><dd>' + esc(e.detalhe) + '</dd></div>' : '') + '</dl>' +
+        '<blockquote>' + esc(e.texto) + '</blockquote>' +
+        '<span class="carimbo" aria-hidden="true">Aprovado</span></article>'
+    : '<div class="memo vazio">' + ICONES.aspas + '<span>cole aqui a frase ou o print real da marca</span></div>'
+  ).join('');
+  $('#logos').innerHTML = marcas.length
+    ? marcas.map(bola).join('')
+    : lacuna('coloque aqui os logos das marcas que você já atendeu (DADOS.marcas)');
+
+  // 6. contato: carta no envelope
+  $('#cartaDe').textContent = 'De: ' + D.nome;
+  if (D.instagram) $('#selo').textContent = D.instagram; else $('#selo').remove();
+  $('#contatoBtns').innerHTML = botaoContatoPrincipal('btn-p') +
+    (D.instagram ? '<a class="btn btn-s" href="https://instagram.com/' + esc(D.instagram.replace('@', '')) + '" target="_blank" rel="noopener">' + ICONES.insta + esc(D.instagram) + '</a>' : '');
+  if (!(D.duvidas || []).length) $('#duvidas').remove();
+  else $('#duvidas').innerHTML = D.duvidas.map(d => '<div class="duvida"><h3>' + esc(d.pergunta) + '</h3><p>' + (d.resposta ? esc(d.resposta) : lacuna('sua resposta curta')) + '</p></div>').join('');
+  montarFormulario();
+
+  // WhatsApp fixo
+  const zap = $('#zap');
+  const w = linkWhats();
+  if (w){ zap.href = w; zap.innerHTML = ICONES.zap; }
+  else if (D.email){ zap.href = linkEmail(); zap.innerHTML = ICONES.mail; zap.removeAttribute('target'); zap.setAttribute('aria-label', 'Mandar e-mail'); }
+  else zap.remove();
+
+  // player
+  $('#fechar').innerHTML = ICONES.x;
+  $('#fechar').addEventListener('click', fecharPlayer);
+  $('#player').addEventListener('click', e => { if (e.target.id === 'player') fecharPlayer(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharPlayer(); });
+
+  // link com ?c=nicho: rola até a página do nicho
+  const c = new URLSearchParams(location.search).get('c');
+  if (c){
+    const alvo = document.getElementById('nicho-' + slug(c));
+    if (alvo) setTimeout(() => alvo.scrollIntoView({behavior: poucoMovimento ? 'auto' : 'smooth', block:'start'}), 150);
+  }
+
+  // métricas (Umami): só entra se tiver o ID
+  if (D.umami){
+    const s = document.createElement('script');
+    s.src = 'https://cloud.umami.is/script.js';
+    s.defer = true;
+    s.setAttribute('data-website-id', D.umami);
+    document.head.appendChild(s);
+  }
+}
+
+function montarFormulario(){
+  const box = $('#formBox');
+  if (!DADOS.formspree){ box.remove(); return; }
+  box.innerHTML =
+    '<form class="form" id="orcamento" novalidate>' +
+      '<h3>Pedir orçamento</h3><p>Cinco respostas rápidas e eu te chamo.</p>' +
+      '<div class="campos">' +
+        '<label>Seu nome<input name="nome" required autocomplete="name"></label>' +
+        '<label>Empresa<input name="empresa" required autocomplete="organization"></label>' +
+        '<label class="cheio">Produto<input name="produto" required placeholder="O que vai aparecer no vídeo"></label>' +
+        '<label>Prazo<input name="prazo" required placeholder="Ex.: até dia 20"></label>' +
+        '<label>WhatsApp<input name="whatsapp" type="tel" required autocomplete="tel" inputmode="tel"></label>' +
+      '</div>' +
+      '<div class="gotcha" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>' +
+      '<button class="btn btn-p" type="submit">Enviar pedido</button>' +
+    '</form>';
+  const f = $('#orcamento');
+  f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    if (!f.checkValidity()){ f.reportValidity(); return; }
+    const bt = f.querySelector('button[type=submit]');
+    bt.disabled = true; bt.textContent = 'Enviando...';
+    try {
+      const r = await fetch(DADOS.formspree, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}});
+      if (!r.ok) throw new Error('erro');
+      box.innerHTML = '<div class="form"><div class="form-msg"><strong>Recebi! Te chamo em breve.</strong></div></div>';
+    } catch(e){
+      box.innerHTML = '<div class="form"><div class="form-msg"><strong>Não consegui enviar agora.</strong><p>Me chama direto que eu respondo rapidinho:</p>' + botaoContatoPrincipal('btn-p') + '</div></div>';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', montar);
+
+
+/* ====================================================================
+   DADOS: troque aqui e a página toda muda junto.
+   Campo vazio ("") aparece na página como espaço listrado com dica.
+   ==================================================================== */
+const DADOS = {
+  // Seu nome, do jeito que aparece na capa, no menu e no rodapé
+  nome: "Denise Zini",
+
+  // Texto da aba da pasta na capa
+  ano: "Portfólio 2026",
+
+  // Seu @ do Instagram (vira o botão do Instagram e o selo do envelope no contato)
+  instagram: "@adenisezini",
+
+  // Outras redes (aparecem no rodapé). Vazio = some
+  tiktok: "@adenisezini",
+  youtube: "DeniseZini",
+
+  // WhatsApp com DDD, só números. Se ficar vazio, o botão vira e-mail
+  whatsapp: "17988278053",
+
+  // E-mail de contato (usado se não tiver WhatsApp)
+  email: "adenisezini@gmail.com",
+
+  // Endereço do site depois de publicar (ex.: "https://denisezini.vercel.app").
+  // Lembre de trocar também o MEU-LINK lá em cima, nas tags og: do <head>
+  site: "",
+
+  // Endereço do formulário do Formspree (ex.: "https://formspree.io/f/abcdwxyz").
+  // Vazio = o formulário de orçamento não aparece, ficam só os botões
+  formspree: "",
+
+  // ID do site no Umami (métricas de acessos e vídeos mais vistos).
+  // Vazio = nenhuma métrica é carregada
+  umami: "",
+
+  // Os números da capa (viram etiquetas brancas)
+  provas: [
+    { numero: "+250", texto: "vídeos gravados" },
+    { numero: "+40",  texto: "marcas atendidas" }
+  ],
+
+  // Suas fotos. A da capa já tem o mesmo filtro retrô da foto do Sobre mim
+  // (a versão sem filtro está em midia/capa-cor.jpg)
+  fotoCapa: "midia/capa-retro.jpg",
+  fotoSobre: "midia/sobre.jpg",
+
+  // Campos da ficha cadastral do Sobre mim
+  ficha: [
+    { campo: "Nome", valor: "Denise Zini" },
+    { campo: "Idade", valor: "25 anos" },
+    { campo: "Cidade", valor: "Mirassol-SP" },
+    { campo: "Estado civil", valor: "Casada" },
+    { campo: "Fé", valor: "Cristã" },
+    { campo: "Formação", valor: "Bacharela em Direito" },
+    { campo: "Experiência", valor: "5 anos criando conteúdo" }
+  ],
+
+  // Texto do Sobre mim (campo "Obs." da ficha), na primeira pessoa. Linha em branco = novo parágrafo
+  sobreTexto: "Sou influencer digital e UGC creator. Trabalho com criação de conteúdo há 5 anos e terminei a faculdade de Direito para viver de internet.\n\nTambém compartilho dicas de criação de conteúdo e edição de vídeos para ajudar outras creators a entregarem conteúdos de qualidade.",
+
+  // Os 3 diferenciais (com o check)
+  diferenciais: [
+    "Mostro o produto dentro da minha rotina real, de um jeito natural",
+    "Explico o produto de um jeito didático, que qualquer pessoa entende",
+    "Entrega em 3 a 5 dias úteis, sempre dentro do prazo"
+  ],
+
+  // Os 3 MELHORES vídeos (não os mais recentes). O primeiro é o mais forte.
+  // titulo: nome curto | nicho | formato: ADS, review, unboxing, tutorial ou nativo
+  // video: caminho do .mp4 | capa: imagem opcional
+  // res: resultado real, se tiver (ex.: "116 vendas"). Sem resultado, deixe ""
+  // marca: o @ do Instagram da marca (aparece no lugar do título, com link)
+  destaques: [
+    { titulo: "Escritório do casal", nicho: "Casa e decoração", formato: "", video: "midia/destaques/1.mp4", capa: "", res: "", marca: "@flexformbr" },
+    { titulo: "Review no tablet", nicho: "Tecnologia", formato: "", video: "midia/destaques/2.mp4", capa: "", res: "", marca: "@huaweimobilebr" },
+    { titulo: "Quebra-cabeça a dois", nicho: "Jogos e casal", formato: "", video: "midia/destaques/3.mp4", capa: "", res: "", marca: "@fotoregistro" }
+  ],
+
+  // Uma pasta por nicho. Mínimo 3 vídeos por nicho (com menos, tire o nicho).
+  // O link com ?c=nome-do-nicho abre direto nele (ex.: ?c=casa-e-decoracao)
+  // Cada vídeo: { titulo: "...", formato: "review", video: "midia/nichos/.../1.mp4", marca: "@instagramdamarca" }
+  // marca: o @ aparece embaixo do vídeo e abre o Instagram da marca. Sem marca, aparece o título.
+  // Os títulos foram tirados da capa de cada vídeo no Canva: confira e ajuste.
+  nichos: [
+    { nome: "Moda e beleza", videos: [
+      { titulo: "Escolhi uma palavra", formato: "", video: "midia/nichos/moda-e-beleza/1.mp4", marca: "@avonbrasil" },
+      { titulo: "Máscara facial", formato: "", video: "midia/nichos/moda-e-beleza/2.mp4", marca: "@avonbrasil" },
+      { titulo: "Em uma estampa", formato: "", video: "midia/nichos/moda-e-beleza/3.mp4", marca: "@vbcamisetas" },
+      { titulo: "Look novo", formato: "", video: "midia/nichos/moda-e-beleza/4.mp4", marca: "@vbcamisetas" },
+      { titulo: "Escova secadora", formato: "", video: "midia/nichos/moda-e-beleza/5.mp4", marca: "@shopee_br" },
+      { titulo: "Mala de bordo Gocase", formato: "", video: "midia/nichos/moda-e-beleza/6.mp4", marca: "@gocasebr" },
+      { titulo: "Bolsa nova", formato: "", video: "midia/nichos/moda-e-beleza/7.mp4", marca: "@gocasebr" },
+      { titulo: "E se eu tentasse te convencer", formato: "", video: "midia/nichos/moda-e-beleza/8.mp4", marca: "@lahtref" },
+      { titulo: "Comprei", formato: "", video: "midia/nichos/moda-e-beleza/9.mp4", marca: "@sheinbrasil" }
+    ]},
+    { nome: "Casa e decoração", videos: [
+      { titulo: "Cadeira de escritório", formato: "", video: "midia/nichos/casa-e-decoracao/1.mp4", marca: "@flexformbr" },
+      { titulo: "Escritório do casal", formato: "", video: "midia/nichos/casa-e-decoracao/2.mp4", marca: "@flexformbr" },
+      { titulo: "Cadeiras novas", formato: "", video: "midia/nichos/casa-e-decoracao/3.mp4", marca: "@provincia.casa" },
+      { titulo: "Itens para o banheiro", formato: "", video: "midia/nichos/casa-e-decoracao/4.mp4", marca: "@shopee_br" },
+      { titulo: "Na cozinha", formato: "", video: "midia/nichos/casa-e-decoracao/5.mp4", marca: "@mercadolivre" },
+      { titulo: "Cantinho de casa", formato: "", video: "midia/nichos/casa-e-decoracao/6.mp4", marca: "@mkbentech" }
+    ]},
+    { nome: "Tecnologia", videos: [
+      { titulo: "Review no tablet", formato: "", video: "midia/nichos/tecnologia/1.mp4", marca: "@huaweimobilebr" },
+      { titulo: "Câmera instantânea", formato: "", video: "midia/nichos/tecnologia/2.mp4", marca: "@insta360brasiloficial" },
+      { titulo: "Cursos com certificados gratuitos", formato: "", video: "midia/nichos/tecnologia/3.mp4", marca: "@cursa.app.br" },
+      { titulo: "Temas de redação", formato: "", video: "midia/nichos/tecnologia/4.mp4", marca: "@grancursosonline" },
+      { titulo: "Celular pra rotina corrida", formato: "", video: "midia/nichos/tecnologia/5.mp4", marca: "@xiaomi.brasil" },
+      { titulo: "Rotina de concurseiro", formato: "", video: "midia/nichos/tecnologia/6.mp4", marca: "@estudei.oficial" },
+      { titulo: "Estudos em casa", formato: "", video: "midia/nichos/tecnologia/7.mp4", marca: "@estudei.oficial" }
+    ]},
+    { nome: "Papelaria", videos: [
+      { titulo: "Minha experiência", formato: "", video: "midia/nichos/papelaria/1.mp4", marca: "@ocadernointeligente" },
+      { titulo: "Comecei a usar", formato: "", video: "midia/nichos/papelaria/2.mp4", marca: "@ocadernointeligente" },
+      { titulo: "Clube por assinatura", formato: "", video: "midia/nichos/papelaria/3.mp4", marca: "@clubeunibox" },
+      { titulo: "Colar e organizar", formato: "", video: "midia/nichos/papelaria/4.mp4", marca: "@oversodavida" },
+      { titulo: "Material de estudo", formato: "", video: "midia/nichos/papelaria/5.mp4", marca: "@oversodavida" }
+    ]},
+    { nome: "Jogos e casal", videos: [
+      { titulo: "Jogo com os amigos", formato: "", video: "midia/nichos/jogos-e-casal/1.mp4", marca: "@partygamesoficial" },
+      { titulo: "Quebra-cabeça a dois", formato: "", video: "midia/nichos/jogos-e-casal/2.mp4", marca: "@fotoregistro" },
+      { titulo: "Jogo de casal", formato: "", video: "midia/nichos/jogos-e-casal/3.mp4", marca: "@fotoregistro" },
+      { titulo: "Ideia de date: noite de investigação", formato: "", video: "midia/nichos/jogos-e-casal/4.mp4" },
+      { titulo: "Jogos em casal", formato: "", video: "midia/nichos/jogos-e-casal/5.mp4" }
+    ]},
+    { nome: "Marketplaces", videos: [
+      { titulo: "Unboxing de móveis", formato: "", video: "midia/nichos/marketplaces/1.mp4", marca: "@lojaslh" },
+      { titulo: "Mesa e cadeiras", formato: "", video: "midia/nichos/marketplaces/2.mp4", marca: "@lojaslh" },
+      { titulo: "Descontos de fábrica", formato: "", video: "midia/nichos/marketplaces/3.mp4", marca: "@provincia.casa" },
+      { titulo: "Fazer compras", formato: "", video: "midia/nichos/marketplaces/4.mp4", marca: "@lojaslh" }
+    ]},
+    { nome: "Experiências e eventos", videos: [
+      { titulo: "Rodízio de sushi", formato: "", video: "midia/nichos/experiencias-e-eventos/4.mp4", marca: "@gassho_sushi_riopreto" },
+      { titulo: "Doceria", formato: "", video: "midia/nichos/experiencias-e-eventos/5.mp4", marca: "@lu_dpaula_doceria" },
+      { titulo: "GoCoffee", formato: "", video: "midia/nichos/experiencias-e-eventos/6.mp4", marca: "@lojagocoffee_" },
+      { titulo: "Espetaria Costa", formato: "", video: "midia/nichos/experiencias-e-eventos/7.mp4", marca: "@espetariacosta" },
+      { titulo: "Bella Capri", formato: "", video: "midia/nichos/experiencias-e-eventos/8.mp4", marca: "@bellacapririopreto" },
+      { titulo: "Visita à Leitura", formato: "", video: "midia/nichos/experiencias-e-eventos/1.mp4", marca: "@leiturariopreto" },
+      { titulo: "Pipoca e diversão", formato: "", video: "midia/nichos/experiencias-e-eventos/2.mp4", marca: "@jonnyjoy.br" },
+      { titulo: "Visita à escola", formato: "", video: "midia/nichos/experiencias-e-eventos/3.mp4", marca: "@kelvin.riopreto" }
+    ]}
+    // Campanhas promocionais tem só 2 vídeos (midia/nichos/campanhas-promocionais).
+    // Quando tiver o 3º, descomente e coloque uma vírgula depois do bloco acima:
+    // { nome: "Campanhas promocionais", videos: [
+    //   { titulo: "Muito improvável", formato: "", video: "midia/nichos/campanhas-promocionais/1.mp4", marca: "@oficialype" },
+    //   { titulo: "No mercado", formato: "", video: "midia/nichos/campanhas-promocionais/2.mp4", marca: "@dovebrasil" }
+    // ]}
+  ],
+
+  // Depoimentos REAIS das marcas (nunca inventar). Até 3. Viram memorandos carimbados.
+  // texto: a frase da marca | marca: nome (vai no "De:") | detalhe: quem falou e o contexto (vai no "Ref.:")
+  // Estes 3 foram copiados dos prints do seu Canva.
+  elogios: [
+    { texto: "O trabalho da Denise com os vídeos sobre o Estudei é simplesmente impecável. Ela consegue apresentar a plataforma de forma super orgânica, espontânea e didática, tudo com uma edição caprichada e muito profissional. É nítido o carinho e o cuidado em cada conteúdo. Recomendo demais!",
+      marca: "Estudei", detalhe: "Laura Amorim · vídeos sobre a plataforma" },
+    { texto: "Denise é uma ótima profissional, traz seu toque pessoal em suas publicações, deixando o material mais orgânico, e explica tudo de uma maneira muito didática e acessível, o que conquistou nossa equipe logo em seus primeiros conteúdos. Além disso, ela é muito pontual, dedicada e entrega tudo com alta qualidade, dentro dos prazos estabelecidos. Recomendamos muito!",
+      marca: "Gran Cursos Online", detalhe: "Nathália, equipe Gran" },
+    { texto: "Gostamos muito da proposta de apresentar o Fotolivro e o quebra-cabeça em momentos de casal. Essa abordagem de “date night” deixou os produtos inseridos de forma natural no seu conteúdo.",
+      marca: "FotoRegistro", detalhe: "Wesley Carvalho, marketing · Fotolivro e quebra-cabeça" }
+  ],
+
+  // Marcas que você já atendeu. No site aparecem SÓ os logos (o nome fica escondido, pra leitores de tela).
+  // Marca sem logo não aparece: coloque a imagem em midia/logos e escreva o caminho, assim:
+  // { nome: "Marca X", logo: "midia/logos/marca-x.png" }
+  // Dica: use logo quadrado (de preferência 320x320). Os atuais já foram padronizados assim.
+  marcas: [
+    { nome: "Avon", logo: "midia/logos/avon.png" },
+    { nome: "Dove", logo: "midia/logos/dove.png" },
+    { nome: "Samsung", logo: "midia/logos/samsung.png" },
+    { nome: "Shein", logo: "midia/logos/shein.png" },
+    { nome: "Shopee", logo: "midia/logos/shopee.png" },
+    { nome: "Mercado Livre", logo: "midia/logos/mercado-livre.png" },
+    { nome: "Huawei", logo: "midia/logos/huawei.png" },
+    { nome: "Xiaomi", logo: "midia/logos/xiaomi.png" },
+    { nome: "Insta360", logo: "midia/logos/insta360.png" },
+    { nome: "Gocase", logo: "midia/logos/gocase.png" },
+    { nome: "Ypê", logo: "midia/logos/ype.png" },
+    { nome: "Lahtref", logo: "midia/logos/lahtref.png" },
+    { nome: "Flexform", logo: "midia/logos/flexform.png" },
+    { nome: "Província Casa", logo: "midia/logos/provincia-casa.png" },
+    { nome: "Post-it", logo: "midia/logos/post-it.png" },
+    { nome: "Stabilo", logo: "midia/logos/stabilo.png" },
+    { nome: "O Caderno Inteligente", logo: "midia/logos/caderno-inteligente.png" },
+    { nome: "Clube Unibox", logo: "midia/logos/clube-unibox.png" },
+    { nome: "Overso da Vida", logo: "midia/logos/overso-da-vida.png" },
+    { nome: "Party Games", logo: "midia/logos/party-games.png" },
+    { nome: "FotoRegistro", logo: "midia/logos/fotoregistro.png" },
+    { nome: "Estudei", logo: "midia/logos/estudei.png" },
+    { nome: "Gran Cursos Online", logo: "midia/logos/gran-cursos.png" },
+    { nome: "Cursa", logo: "midia/logos/cursa.png" },
+    { nome: "Anhanguera", logo: "midia/logos/anhanguera.png" },
+    { nome: "Saraiva Jur", logo: "midia/logos/saraiva-jur.png" },
+    { nome: "NEAF", logo: "midia/logos/neaf.png" },
+    { nome: "Level Up", logo: "midia/logos/level-up.png" },
+    { nome: "VB Camisetas", logo: "midia/logos/vb-camisetas.png" },
+    { nome: "Leitura", logo: "midia/logos/leitura.png" },
+    { nome: "ARQ Finance", logo: "midia/logos/arq-finance.png" }
+  ],
+
+  // Dúvidas no fim do contato. Lista vazia = a parte não aparece.
+  // Pra voltar a mostrar: { pergunta: "Qual o prazo?", resposta: "De 3 a 5 dias úteis." }
+  duvidas: []
+};
+</script>
+</body>
+</html>
