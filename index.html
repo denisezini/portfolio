@@ -235,10 +235,15 @@ html.foto-capa .capa{padding:58px 0 0}
 
 /* 5. FEEDBACKS: memorandos */
 .pasta-feed{--cor:var(--kraft)}
-.memos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
-.memo{position:relative;background:#fff;border-radius:3px;box-shadow:var(--sombra);padding:26px 24px 28px;display:flex;flex-direction:column;gap:14px;transform:rotate(-.8deg)}
-.memo:nth-child(2){transform:rotate(.7deg);margin-top:14px}
-.memo:nth-child(3){transform:rotate(-.4deg)}
+/* carrossel de memorandos: passa pro lado com as setas, arrastando ou com o dedo */
+.memos{display:flex;gap:24px;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;padding:30px 8px 26px;margin:-8px -8px 0}
+.memos::-webkit-scrollbar{display:none}
+.memos.arrastando{scroll-snap-type:none;cursor:grabbing}
+.memos.arrastando *{user-select:none}
+.memo{flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;position:relative;background:#fff;border-radius:3px;box-shadow:var(--sombra);padding:26px 24px 28px;display:flex;flex-direction:column;gap:14px;transform:rotate(-.8deg)}
+.memo:nth-child(3n+2){transform:rotate(.7deg);margin-top:14px}
+.memo:nth-child(3n){transform:rotate(-.4deg)}
+.feed-top{margin-bottom:0}
 .memo .clipinho{top:-24px;right:24px}
 .memo-topo{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta);border-bottom:2px solid var(--tinta);padding-bottom:8px}
 .memo-dados{font-family:var(--mono);font-size:13px;line-height:1.45;display:grid;gap:3px;padding-bottom:12px;border-bottom:1px dashed var(--cinza2)}
@@ -324,8 +329,7 @@ html.foto-capa .capa{padding:58px 0 0}
   .pasta-capa{padding:48px 32px 56px}
   .pilha .nicho{padding:28px 28px 56px}
   .trilho .vcard{flex-basis:calc((100% - 16px)/2)}
-  .memos{grid-template-columns:1fr;max-width:560px;margin:0 auto}
-  .memo:nth-child(2){margin-top:0}
+  .memo{flex-basis:calc((100% - 24px)/2)}
   .duvidas{grid-template-columns:1fr 1fr}
 }
 /* CELULAR */
@@ -363,7 +367,9 @@ html.foto-capa .capa{padding:58px 0 0}
   .pilha .nicho{padding:24px 16px 52px}
   .pilha .nicho:last-child{padding-bottom:32px}
   .trilho .vcard{flex-basis:76%}
-  .memo{padding:22px 18px 24px}
+  .memo{padding:22px 18px 24px;flex-basis:86%}
+  .memo:nth-child(3n+2){margin-top:0}
+  .memos{gap:16px}
   .carta{margin:0 10px;padding:24px 18px 170px}
   .carta-topo{flex-direction:column;gap:2px}
   .env-costas{height:260px}
@@ -528,6 +534,13 @@ html.foto-capa .capa{padding:58px 0 0}
       <div class="pasta pasta-feed">
         <span class="aba" data-t="mFeedbacks">Feedbacks</span>
         <h2 class="sec-title" data-ti="tFeedbacks"><span class="ini">F</span>eedbacks de marcas</h2>
+        <div class="nicho-top feed-top">
+          <span class="conta" id="contaFeed"></span>
+          <div class="setas" id="setasFeed">
+            <button class="seta" aria-label="Feedbacks anteriores" data-t-aria="feedAnt"></button>
+            <button class="seta" aria-label="Próximos feedbacks" data-t-aria="feedProx"></button>
+          </div>
+        </div>
         <div class="memos" id="elogios"></div>
         <div class="atendidas" id="atendidas">
           <h3 data-t="atendidas">Marcas que eu já atendi</h3>
@@ -730,7 +743,7 @@ function ligarCarrossel(trilho, btnEsq, btnDir){
     if (!ini) return;
     ini = null;
     if (moveu){
-      const card = trilho.querySelector('.vcard');
+      const card = trilho.firstElementChild;
       const largura = card ? card.offsetWidth + 16 : passo();
       const alvo = Math.round(trilho.scrollLeft / largura) * largura;
       trilho.classList.remove('arrastando');
@@ -868,9 +881,9 @@ function montar(){
   });
   ligarVideos($('#paginasNicho'));
 
-  // 5. feedbacks: memorandos carimbados
-  const els = (D.elogios || []).slice(0, 3);
-  while (els.length < 3) els.push({});
+  // 5. feedbacks: memorandos carimbados, todos num carrossel (passa pro lado)
+  const els = (D.elogios || []).filter(e => e && e.texto);
+  if (!els.length) els.push({});
   $('#elogios').innerHTML = els.map(e => e.texto
     ? '<article class="memo"><span class="clipinho">' + ICONES.clipinho + '</span>' +
         '<dl class="memo-dados"><div><dt>' + esc(T('de')) + '</dt><dd>' + esc(e.marca) + '</dd></div><div><dt>' + esc(T('para')) + '</dt><dd>' + esc(D.nome) + '</dd></div>' +
@@ -879,6 +892,11 @@ function montar(){
         '<span class="carimbo" aria-hidden="true">' + esc(T('aprovado')) + '</span></article>'
     : '<div class="memo vazio">' + ICONES.aspas + '<span>cole aqui a frase ou o print real da marca</span></div>'
   ).join('');
+  const totalFeed = els.filter(e => e.texto).length;
+  $('#contaFeed').textContent = doisDigitos(totalFeed) + ' ' + T('feedbacks');
+  const setasFeed = $('#setasFeed').querySelectorAll('.seta');
+  setasFeed[0].innerHTML = ICONES.esq; setasFeed[1].innerHTML = ICONES.dir;
+  ligarCarrossel($('#elogios'), setasFeed[0], setasFeed[1]);
   $('#logos').innerHTML = marcas.length
     ? marcas.map(bola).join('')
     : lacuna('coloque aqui os logos das marcas que você já atendeu (DADOS.marcas)');
@@ -998,6 +1016,7 @@ const TEXTOS = {
     tNichos: 'Ache o vídeo do seu nicho', atalhosAria: 'Atalhos dos nichos',
     video: 'vídeo', videos: 'vídeos', minimo: 'mínimo 3 vídeos',
     anteriores: 'Vídeos anteriores de ', proximos: 'Próximos vídeos de ',
+    feedbacks: 'feedbacks', feedAnt: 'Feedbacks anteriores', feedProx: 'Próximos feedbacks',
     tFeedbacks: 'Feedbacks de marcas', de: 'De:', para: 'Para:', ref: 'Ref.:', aprovado: 'Aprovado',
     atendidas: 'Marcas que eu já atendi',
     cartaPara: 'Para: sua marca', tContato: 'Vamos trabalhar juntos?',
@@ -1021,6 +1040,7 @@ const TEXTOS = {
     tNichos: 'Find a video in your niche', atalhosAria: 'Niche shortcuts',
     video: 'video', videos: 'videos', minimo: 'minimum 3 videos',
     anteriores: 'Previous videos: ', proximos: 'Next videos: ',
+    feedbacks: 'reviews', feedAnt: 'Previous reviews', feedProx: 'Next reviews',
     tFeedbacks: 'Brand feedback', de: 'From:', para: 'To:', ref: 'Re:', aprovado: 'Approved',
     atendidas: "Brands I've worked with",
     cartaPara: 'To: your brand', tContato: 'Shall we work together?',
@@ -1200,16 +1220,27 @@ const DADOS = {
     // ]}
   ],
 
-  // Depoimentos REAIS das marcas (nunca inventar). Até 3. Viram memorandos carimbados.
+  // Depoimentos REAIS das marcas (nunca inventar). Quantos quiser: viram memorandos carimbados num carrossel.
   // texto: a frase da marca | marca: nome (vai no "De:") | detalhe: quem falou e o contexto (vai no "Ref.:")
-  // Estes 3 foram copiados dos prints do seu Canva.
+  // Copiados dos prints do seu Canva e das avaliações da plataforma. A ordem aqui é a ordem no site.
+  // Se adicionar um novo, adicione a tradução dele no bloco "en" lá embaixo, na mesma posição.
   elogios: [
     { texto: "O trabalho da Denise com os vídeos sobre o Estudei é simplesmente impecável. Ela consegue apresentar a plataforma de forma super orgânica, espontânea e didática, tudo com uma edição caprichada e muito profissional. É nítido o carinho e o cuidado em cada conteúdo. Recomendo demais!",
       marca: "Estudei", detalhe: "Laura Amorim · vídeos sobre a plataforma" },
     { texto: "Denise é uma ótima profissional, traz seu toque pessoal em suas publicações, deixando o material mais orgânico, e explica tudo de uma maneira muito didática e acessível, o que conquistou nossa equipe logo em seus primeiros conteúdos. Além disso, ela é muito pontual, dedicada e entrega tudo com alta qualidade, dentro dos prazos estabelecidos. Recomendamos muito!",
       marca: "Gran Cursos Online", detalhe: "Nathália, equipe Gran" },
     { texto: "Gostamos muito da proposta de apresentar o Fotolivro e o quebra-cabeça em momentos de casal. Essa abordagem de “date night” deixou os produtos inseridos de forma natural no seu conteúdo.",
-      marca: "FotoRegistro", detalhe: "Wesley Carvalho, marketing · Fotolivro e quebra-cabeça" }
+      marca: "FotoRegistro", detalhe: "Wesley Carvalho, marketing · Fotolivro e quebra-cabeça" },
+    { texto: "Oie, De! Nós do time de marketing da Flexform adoramos o seu trabalho! Agradecemos pelo cuidado com todo o processo criativo, você é demais! ❤️",
+      marca: "Flexform", detalhe: "Time de marketing" },
+    { texto: "Foi ótimo trabalhar com você. Criativa, dedicada, cumpriu o prazo combinado e as entregas ficaram lindas! Tudo com muita qualidade! Desejo muito sucesso na sua jornada e espero que, em breve, possamos fazer novos projetos juntas 💚",
+      marca: "Realizzare Cursos", detalhe: "" },
+    { texto: "Resultado ficou maravilhoso! O vídeo deu bastante engajamento e combinou super com a proposta da VB Camisetas! 🚀💗",
+      marca: "VB Camisetas", detalhe: "Avaliação ★★★★★" },
+    { texto: "A Denise foi super profissional e entregou um vídeo acima das expectativas <3",
+      marca: "Ahead Company", detalhe: "Avaliação ★★★★★" },
+    { texto: "Ameii, seu conteúdo e sua pontualidade, isso faz toda a diferença para a campanha! Vídeo ficou super bom e me deixou com vontade de comprar essa escova kkkkkk arrasou, parabéns!!",
+      marca: "Thecoathers", detalhe: "Laís" }
   ],
 
   // Marcas que você já atendeu. No site aparecem SÓ os logos (o nome fica escondido, pra leitores de tela).
@@ -1303,7 +1334,17 @@ const DADOS = {
       { texto: "Denise is a great professional. She brings her personal touch to her posts, making the content feel more organic, and explains everything in a very clear and accessible way, which won our team over from her very first videos. She is also very punctual and dedicated, and delivers everything with high quality and on schedule. We highly recommend her!",
         detalhe: "Nathália, Gran team" },
       { texto: "We really liked the idea of showing the Photobook and the puzzle in couple moments. That “date night” approach made the products fit naturally into her content.",
-        detalhe: "Wesley Carvalho, marketing · Photobook and puzzle" }
+        detalhe: "Wesley Carvalho, marketing · Photobook and puzzle" },
+      { texto: "Hi, De! We on the Flexform marketing team loved your work! Thank you for the care you put into the whole creative process, you're amazing! ❤️",
+        detalhe: "Marketing team" },
+      { texto: "It was great working with you. Creative, dedicated, met the agreed deadline and the deliverables turned out beautiful! Everything with great quality! I wish you much success on your journey and hope we can work on new projects together soon 💚",
+        detalhe: "" },
+      { texto: "The result was wonderful! The video got a lot of engagement and matched the VB Camisetas concept perfectly! 🚀💗",
+        detalhe: "★★★★★ review" },
+      { texto: "Denise was super professional and delivered a video beyond expectations <3",
+        detalhe: "★★★★★ review" },
+      { texto: "Loved it! Your content and your punctuality make all the difference for the campaign! The video turned out great and made me want to buy that brush haha, you nailed it, congrats!!",
+        detalhe: "Laís" }
     ]
   }
 };
