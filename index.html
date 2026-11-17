@@ -98,8 +98,16 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
 .links a{font-size:14px;color:var(--apoio);font-weight:500}
 .links a:hover{color:var(--tinta)}
 .links a.btn,.links a.btn:hover{color:#fff}
+@media (max-width:1100px){ .links{gap:18px} .links a{font-size:13.5px} }
 .menu-btn{display:none;height:40px;padding:0 16px;border:1px solid var(--linha);border-radius:999px;font-size:14px;font-weight:500;color:var(--tinta)}
 .menu-panel{display:none}
+.menu-dir{display:flex;align-items:center;gap:16px}
+/* botões de idioma PT / EN */
+.idioma{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--linha);border-radius:999px;background:#fff;flex:none}
+.idioma button{height:32px;min-width:40px;padding:0 10px;border-radius:999px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--apoio);transition:background .2s,color .2s}
+.idioma button:hover{color:var(--tinta)}
+.idioma button[aria-pressed="true"]{background:var(--manteiga);color:var(--tinta)}
+.idioma button:focus-visible{outline:2px solid var(--tinta);outline-offset:1px}
 
 /* 1. CAPA: pasta-dossiê */
 .capa{padding:calc(var(--menu) + 64px) 0 24px}
@@ -370,25 +378,32 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
 <header class="menu">
   <div class="wrap">
     <a href="#topo" class="logo" id="logo"></a>
-    <nav class="links" aria-label="Menu">
-      <a href="#sobre">Sobre mim</a>
-      <a href="#destaques">Destaques</a>
-      <a href="#nichos">Nichos</a>
-      <a href="#marcas">Feedbacks</a>
-      <a href="#atendidas">Marcas</a>
-      <a href="#contato">Contato</a>
-      <a href="#contato" class="btn btn-p btn-sm">Falar comigo</a>
-    </nav>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+    <div class="menu-dir">
+      <nav class="links" aria-label="Menu">
+        <a href="#sobre" data-t="mSobre">Sobre mim</a>
+        <a href="#destaques" data-t="mDestaques">Destaques</a>
+        <a href="#nichos" data-t="mNichos">Nichos</a>
+        <a href="#marcas" data-t="mFeedbacks">Feedbacks</a>
+        <a href="#atendidas" data-t="mMarcas">Marcas</a>
+        <a href="#contato" data-t="mContato">Contato</a>
+        <a href="#contato" class="btn btn-p btn-sm" data-t="falar">Falar comigo</a>
+      </nav>
+      <!-- troca de idioma: PT / EN -->
+      <div class="idioma" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" lang="pt-BR" aria-label="Português">PT</button>
+        <button type="button" data-lang="en" lang="en" aria-label="English">EN</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel" data-t="menu">Menu</button>
+    </div>
   </div>
   <div class="menu-panel" id="menuPanel">
-    <a href="#sobre">Sobre mim</a>
-    <a href="#destaques">Destaques</a>
-    <a href="#nichos">Nichos</a>
-    <a href="#marcas">Feedbacks</a>
-      <a href="#atendidas">Marcas</a>
-    <a href="#contato">Contato</a>
-    <a href="#contato" class="btn btn-p">Falar comigo</a>
+    <a href="#sobre" data-t="mSobre">Sobre mim</a>
+    <a href="#destaques" data-t="mDestaques">Destaques</a>
+    <a href="#nichos" data-t="mNichos">Nichos</a>
+    <a href="#marcas" data-t="mFeedbacks">Feedbacks</a>
+    <a href="#atendidas" data-t="mMarcas">Marcas</a>
+    <a href="#contato" data-t="mContato">Contato</a>
+    <a href="#contato" class="btn btn-p" data-t="falar">Falar comigo</a>
   </div>
 </header>
 
@@ -403,10 +418,10 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
           <span class="aba" id="capaAba"></span>
           <div class="capa-grid">
             <div>
-              <span class="tag">✦ UGC creator · Influencer digital</span>
+              <span class="tag" data-t="tagCapa">✦ UGC creator · Influencer digital</span>
               <div class="nome-box">
                 <h1 id="nome"></h1>
-                <svg class="carimbo-capa" viewBox="0 0 160 160" role="img" aria-label="Carimbo: alto em criatividade">
+                <svg class="carimbo-capa" viewBox="0 0 160 160" role="img" aria-label="Carimbo: alto em criatividade" data-t-aria="carimboAria">
                   <defs>
                     <path id="voltaCarimbo" d="M80 80m-55 0a55 55 0 1 1 110 0a55 55 0 1 1-110 0"/>
                     <!-- textura de carimbo falhado: pontinhos sem tinta + manchas mais fracas + borda tremida -->
@@ -425,22 +440,22 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
                   <circle cx="80" cy="80" r="77" fill="none" stroke="currentColor" stroke-width="3.5"/>
                   <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" stroke-width="1.2"/>
                   <circle cx="80" cy="80" r="41" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                  <text font-family="'Courier Prime',monospace" font-weight="700" font-size="19" letter-spacing="1" fill="currentColor"><textPath href="#voltaCarimbo" textLength="338" lengthAdjust="spacing">ALTO EM CRIATIVIDADE ★</textPath></text>
+                  <text font-family="'Courier Prime',monospace" font-weight="700" font-size="19" letter-spacing="1" fill="currentColor"><textPath href="#voltaCarimbo" textLength="338" lengthAdjust="spacing" data-t="carimbo">ALTO EM CRIATIVIDADE ★</textPath></text>
                   <path d="M80 58l5.2 13.6L99.5 73l-11.2 9 3.9 14.2L80 88.2l-12.2 8 3.9-14.2-11.2-9 14.3-1.4z" fill="currentColor"/>
                   </g>
                 </svg>
               </div>
               <div class="provas" id="provas"></div>
               <div class="btns">
-                <a href="#destaques" class="btn btn-p">Ver meus melhores vídeos</a>
-                <a href="#contato" class="btn btn-s">Falar comigo</a>
+                <a href="#destaques" class="btn btn-p" data-t="verVideos">Ver meus melhores vídeos</a>
+                <a href="#contato" class="btn btn-s" data-t="falar">Falar comigo</a>
               </div>
-              <nav class="redes-capa" id="redesCapa" aria-label="Minhas redes sociais"></nav>
+              <nav class="redes-capa" id="redesCapa" aria-label="Minhas redes sociais" data-t-aria="redesAria"></nav>
             </div>
             <figure class="polaroid polaroid-capa">
               <span class="clipe" data-clipe></span>
               <div class="foto" id="fotoCapa"></div>
-              <figcaption>Sua creator</figcaption>
+              <figcaption data-t="suaCreator">Sua creator</figcaption>
             </figure>
           </div>
           <span class="ref" aria-hidden="true">REF. UGC · DZ</span>
@@ -453,30 +468,30 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
   <section class="sec" id="sobre">
     <div class="wrap">
       <div class="pasta pasta-sobre">
-        <span class="aba">Sobre mim</span>
+        <span class="aba" data-t="mSobre">Sobre mim</span>
         <h2 class="sec-title" id="sobreTitulo"></h2>
         <article class="ficha">
-          <div class="ficha-topo"><span>Ficha nº 001</span><span>Creator UGC</span></div>
+          <div class="ficha-topo"><span data-t="fichaN">Ficha nº 001</span><span data-t="fichaTipo">Creator UGC</span></div>
           <div class="ficha-corpo">
             <dl class="campos-ficha" id="fichaCampos"></dl>
             <figure class="foto34"><span class="grampo" aria-hidden="true"></span><div class="foto" id="fotoSobre"></div></figure>
           </div>
-          <div class="ficha-bloco"><h3>Obs.:</h3><div class="sobre-txt" id="sobreTexto"></div></div>
-          <div class="ficha-bloco"><h3>Diferenciais:</h3><ul class="difs" id="difs"></ul></div>
+          <div class="ficha-bloco"><h3 data-t="obs">Obs.:</h3><div class="sobre-txt" id="sobreTexto"></div></div>
+          <div class="ficha-bloco"><h3 data-t="difs">Diferenciais:</h3><ul class="difs" id="difs"></ul></div>
         </article>
       </div>
     </div>
   </section>
 
   <!-- faixa das marcas atendidas (não é seção) -->
-  <div class="faixa" id="faixa" aria-label="Marcas que eu já atendi"></div>
+  <div class="faixa" id="faixa" aria-label="Marcas que eu já atendi" data-t-aria="atendidas"></div>
 
   <!-- 3. DESTAQUES: tira de fotos -->
   <section class="sec" id="destaques">
     <div class="wrap">
       <div class="pasta pasta-dest">
-        <span class="aba">Destaques</span>
-        <h2 class="sec-title"><span class="ini">M</span>eus melhores vídeos</h2>
+        <span class="aba" data-t="mDestaques">Destaques</span>
+        <h2 class="sec-title" data-ti="tDestaques"><span class="ini">M</span>eus melhores vídeos</h2>
         <div class="tira">
           <span class="fita" aria-hidden="true"></span>
           <div class="tira-fotos" id="dest"></div>
@@ -489,9 +504,9 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
   <section class="sec" id="nichos">
     <div class="wrap">
       <div class="sec-head">
-        <span class="tag">Nichos</span>
-        <h2 class="sec-title"><span class="ini">A</span>che o vídeo do seu nicho</h2>
-        <nav class="atalhos" id="atalhos" aria-label="Atalhos dos nichos"></nav>
+        <span class="tag" data-t="mNichos">Nichos</span>
+        <h2 class="sec-title" data-ti="tNichos"><span class="ini">A</span>che o vídeo do seu nicho</h2>
+        <nav class="atalhos" id="atalhos" aria-label="Atalhos dos nichos" data-t-aria="atalhosAria"></nav>
       </div>
       <div class="pilha" id="paginasNicho"></div>
     </div>
@@ -501,11 +516,11 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
   <section class="sec" id="marcas">
     <div class="wrap">
       <div class="pasta pasta-feed">
-        <span class="aba">Feedbacks</span>
-        <h2 class="sec-title"><span class="ini">F</span>eedbacks de marcas</h2>
+        <span class="aba" data-t="mFeedbacks">Feedbacks</span>
+        <h2 class="sec-title" data-ti="tFeedbacks"><span class="ini">F</span>eedbacks de marcas</h2>
         <div class="memos" id="elogios"></div>
         <div class="atendidas" id="atendidas">
-          <h3>Marcas que eu já atendi</h3>
+          <h3 data-t="atendidas">Marcas que eu já atendi</h3>
           <div class="logos" id="logos"></div>
         </div>
       </div>
@@ -518,10 +533,10 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
       <div class="envelope">
         <div class="env-costas" aria-hidden="true"></div>
         <div class="carta">
-          <div class="carta-topo"><span id="cartaDe"></span><span>Para: sua marca</span></div>
-          <h2 class="sec-title"><span class="ini">V</span>amos trabalhar juntos?</h2>
+          <div class="carta-topo"><span id="cartaDe"></span><span data-t="cartaPara">Para: sua marca</span></div>
+          <h2 class="sec-title" data-ti="tContato"><span class="ini">V</span>amos trabalhar juntos?</h2>
           <div class="btns" id="contatoBtns"></div>
-          <nav class="redes-capa redes-carta" id="redesCarta" aria-label="Minhas redes sociais"></nav>
+          <nav class="redes-capa redes-carta" id="redesCarta" aria-label="Minhas redes sociais" data-t-aria="redesAria"></nav>
           <div id="formBox"></div>
         </div>
         <div class="env-frente" aria-hidden="true"><span class="selo" id="selo"></span></div>
@@ -532,13 +547,13 @@ section,#atendidas{scroll-margin-top:calc(var(--menu) + 56px)}
 </main>
 
 <footer class="rodape">
-  <div class="wrap"><div><b id="rodapeNome"></b><br>Influencer digital &amp; UGC creator</div><nav class="redes" id="redes" aria-label="Minhas redes"></nav></div>
+  <div class="wrap"><div><b id="rodapeNome"></b><br><span data-t="rodape">Influencer digital &amp; UGC creator</span></div><nav class="redes" id="redes" aria-label="Minhas redes" data-t-aria="redesAria"></nav></div>
 </footer>
 
-<a class="zap" id="zap" target="_blank" rel="noopener" aria-label="Falar comigo no WhatsApp"></a>
+<a class="zap" id="zap" target="_blank" rel="noopener" aria-label="Falar comigo no WhatsApp" data-t-aria="zapAria"></a>
 
-<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Vídeo">
-  <button class="fechar" id="fechar" aria-label="Fechar vídeo"></button>
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Vídeo" data-t-aria="videoAria">
+  <button class="fechar" id="fechar" aria-label="Fechar vídeo" data-t-aria="fecharVideo"></button>
   <video id="playerVideo" controls playsinline></video>
 </div>
 
@@ -587,19 +602,19 @@ function linkWhats(){
   const num = String(DADOS.whatsapp || '').replace(/\D/g, '');
   if (!num) return '';
   const completo = num.length <= 11 ? '55' + num : num;
-  const msg = 'Oi, ' + primeiroNome() + '! Vi seu portfólio e quero conversar sobre vídeos pra minha marca.';
+  const msg = T('msgContato').replace('{nome}', primeiroNome());
   return 'https://wa.me/' + completo + '?text=' + encodeURIComponent(msg);
 }
 function linkEmail(){
   if (!DADOS.email) return '';
-  return 'mailto:' + DADOS.email + '?subject=' + encodeURIComponent('Vídeos UGC pra minha marca') +
-    '&body=' + encodeURIComponent('Oi, ' + primeiroNome() + '! Vi seu portfólio e quero conversar sobre vídeos pra minha marca.');
+  return 'mailto:' + DADOS.email + '?subject=' + encodeURIComponent(T('assuntoEmail')) +
+    '&body=' + encodeURIComponent(T('msgContato').replace('{nome}', primeiroNome()));
 }
 function botaoContatoPrincipal(classe){
   const w = linkWhats();
-  if (w) return '<a class="btn ' + classe + '" href="' + esc(w) + '" target="_blank" rel="noopener">' + ICONES.zap + 'Chamar no WhatsApp</a>';
+  if (w) return '<a class="btn ' + classe + '" href="' + esc(w) + '" target="_blank" rel="noopener">' + ICONES.zap + esc(T('whats')) + '</a>';
   const e = linkEmail();
-  return '<a class="btn ' + classe + '" href="' + esc(e) + '">' + ICONES.mail + 'Mandar e-mail</a>';
+  return '<a class="btn ' + classe + '" href="' + esc(e) + '">' + ICONES.mail + esc(T('email')) + '</a>';
 }
 
 /* ---------- vídeo: card, hover e player ---------- */
@@ -612,7 +627,7 @@ function cardVideo(item, opcoes){
   if (temVideo){
     const auto = opcoes.auto ? ' muted autoplay loop playsinline' : ' muted loop playsinline';
     const poster = item.capa ? ' poster="' + esc(item.capa) + '"' : '';
-    caixa = '<div class="vbox" role="button" tabindex="0" data-video="' + esc(item.video) + '" data-titulo="' + esc(item.titulo || 'video') + '" aria-label="Abrir vídeo ' + esc(item.titulo || '') + '">' +
+    caixa = '<div class="vbox" role="button" tabindex="0" data-video="' + esc(item.video) + '" data-titulo="' + esc(item.titulo || 'video') + '" aria-label="' + esc(T('abrirVideo')) + ' ' + esc(item.titulo || '') + '">' +
       (opcoes.extra || '') +
       '<video src="' + esc(videoSrc(item.video)) + '" preload="metadata"' + poster + auto + (opcoes.auto ? ' data-auto="1"' : '') + '></video>' +
       (item.res ? '<span class="res">' + esc(item.res) + '</span>' : '') +
@@ -712,7 +727,19 @@ function ligarCarrossel(trilho, btnEsq, btnDir){
 
 /* ---------- monta a página ---------- */
 function montar(){
-  const D = DADOS;
+  const D = dadosNoIdioma();
+
+  // idioma: textos fixos da página, título da aba e botões PT / EN
+  document.documentElement.lang = LANG === 'en' ? 'en' : 'pt-BR';
+  document.title = T('tituloPagina');
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = T(el.dataset.t); });
+  document.querySelectorAll('[data-ti]').forEach(el => { el.innerHTML = comInicial(T(el.dataset.ti)); });
+  document.querySelectorAll('[data-t-aria]').forEach(el => { el.setAttribute('aria-label', T(el.dataset.tAria)); });
+  document.querySelectorAll('.idioma button').forEach(b => {
+    b.setAttribute('aria-pressed', b.dataset.lang === LANG);
+    b.addEventListener('click', () => trocarIdioma(b.dataset.lang));
+  });
+  try { const y = sessionStorage.getItem('rolagem'); if (y){ sessionStorage.removeItem('rolagem'); requestAnimationFrame(() => window.scrollTo(0, +y)); } } catch(e){}
 
   // clipes desenhados
   document.querySelectorAll('[data-clipe]').forEach(el => { el.innerHTML = ICONES.clipe; });
@@ -723,10 +750,10 @@ function montar(){
   $('#menuBtn').addEventListener('click', () => {
     const aberto = $('#menuPanel').classList.toggle('aberto');
     $('#menuBtn').setAttribute('aria-expanded', aberto);
-    $('#menuBtn').textContent = aberto ? 'Fechar' : 'Menu';
+    $('#menuBtn').textContent = aberto ? T('fechar') : T('menu');
   });
   $('#menuPanel').querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    $('#menuPanel').classList.remove('aberto'); $('#menuBtn').textContent = 'Menu'; $('#menuBtn').setAttribute('aria-expanded', false);
+    $('#menuPanel').classList.remove('aberto'); $('#menuBtn').textContent = T('menu'); $('#menuBtn').setAttribute('aria-expanded', false);
   }));
   const redes = [];
   if (D.instagram) redes.push('<a href="https://instagram.com/' + esc(D.instagram.replace('@','')) + '" target="_blank" rel="noopener">Instagram</a>');
@@ -742,8 +769,8 @@ function montar(){
     D.youtube && { nome: 'YouTube', icone: ICONES.youtube, url: 'https://www.youtube.com/@' + limpa(D.youtube) }
   ].filter(Boolean);
   if (redesCapa.length){
-    $('#redesCapa').innerHTML = '<span class="rotulo">Me acompanhe</span>' + redesCapa.map(r =>
-      '<a class="rede" href="' + esc(r.url) + '" target="_blank" rel="noopener" aria-label="Meu ' + r.nome + '" title="' + r.nome + '">' + r.icone + '</a>').join('');
+    $('#redesCapa').innerHTML = '<span class="rotulo">' + esc(T('meAcompanhe')) + '</span>' + redesCapa.map(r =>
+      '<a class="rede" href="' + esc(r.url) + '" target="_blank" rel="noopener" aria-label="' + esc(T('meu')) + ' ' + r.nome + '" title="' + r.nome + '">' + r.icone + '</a>').join('');
   } else $('#redesCapa').remove();
 
   // 1. capa
@@ -757,7 +784,7 @@ function montar(){
     : ph('foto', 'Retrato com rosto, luz natural e ambiente real. Sem selfie: a capa mostra o seu nível', 'midia/capa.jpg');
 
   // 2. sobre: ficha cadastral
-  $('#sobreTitulo').innerHTML = comInicial('Prazer, eu sou a ' + primeiroNome() + '.');
+  $('#sobreTitulo').innerHTML = comInicial(T('prazer').replace('{nome}', primeiroNome()));
   $('#fichaCampos').innerHTML = (D.ficha || []).map(f => '<div class="campo"><dt>' + esc(f.campo) + ':</dt><dd>' + esc(f.valor) + '</dd></div>').join('');
   $('#sobreTexto').innerHTML = D.sobreTexto
     ? D.sobreTexto.split(/\n\s*\n/).map(p => '<p>' + esc(p) + '</p>').join('')
@@ -781,7 +808,7 @@ function montar(){
   $('#dest').innerHTML = D.destaques.slice(0, 3).map((d, i) => cardVideo(d, {
     auto: i === 0,
     classe: i === 0 ? 'forte' : '',
-    extra: i === 0 ? '<span class="forte-tag">✦ Top 1</span>' : '',
+    extra: i === 0 ? '<span class="forte-tag">' + esc(T('top1')) + '</span>' : '',
     dica: i === 0 ? 'Os melhores na frente, não os mais recentes. O nº 1 é o mais forte' : 'Os melhores na frente, não os mais recentes',
     caminho: 'midia/destaques/' + (i + 1) + '.mp4',
     linha: [d.nicho, d.formato].filter(Boolean).map(esc).join(' · ')
@@ -800,7 +827,7 @@ function montar(){
   // 4. nichos: uma pasta por nicho, empilhadas, com carrossel
   const cores = ['var(--manteiga)', 'var(--kraft)', 'var(--creme)', 'var(--cinza)', 'var(--palha)'];
   const lados = ['esq', 'meio', 'dir'];
-  $('#atalhos').innerHTML = D.nichos.map(n => '<a href="#nicho-' + slug(n.nome) + '">' + esc(n.nome) + '</a>').join('');
+  $('#atalhos').innerHTML = D.nichos.map(n => '<a href="#nicho-' + slug(n.nome) + '">' + esc(n.nomeExibido || n.nome) + '</a>').join('');
   $('#paginasNicho').innerHTML = D.nichos.map((n, idx) => {
     const s = slug(n.nome);
     const videos = (n.videos || []).filter(v => v && v.video && !ehLinkDeRede(v.video));
@@ -811,11 +838,11 @@ function montar(){
     }
     const lado = lados[idx % lados.length];
     return '<div class="pasta nicho aba-' + lado + '" id="nicho-' + s + '" style="--cor:' + cores[idx % cores.length] + '">' +
-      '<h3 class="aba ' + lado + '">' + esc(n.nome) + '</h3>' +
-      '<div class="nicho-top"><span class="conta">' + doisDigitos(total) + (total === 1 ? ' vídeo' : ' vídeos') +
-      (total < 3 ? '<span class="tag" title="Com menos de 3 vídeos, tire o nicho">mínimo 3 vídeos</span>' : '') + '</span>' +
-      '<div class="setas"><button class="seta" aria-label="Vídeos anteriores de ' + esc(n.nome) + '">' + ICONES.esq + '</button>' +
-      '<button class="seta" aria-label="Próximos vídeos de ' + esc(n.nome) + '">' + ICONES.dir + '</button></div></div>' +
+      '<h3 class="aba ' + lado + '">' + esc(n.nomeExibido || n.nome) + '</h3>' +
+      '<div class="nicho-top"><span class="conta">' + doisDigitos(total) + ' ' + (total === 1 ? T('video') : T('videos')) +
+      (total < 3 ? '<span class="tag" title="Com menos de 3 vídeos, tire o nicho">' + esc(T('minimo')) + '</span>' : '') + '</span>' +
+      '<div class="setas"><button class="seta" aria-label="' + esc(T('anteriores') + (n.nomeExibido || n.nome)) + '">' + ICONES.esq + '</button>' +
+      '<button class="seta" aria-label="' + esc(T('proximos') + (n.nomeExibido || n.nome)) + '">' + ICONES.dir + '</button></div></div>' +
       '<div class="trilho">' + cards + '</div></div>';
   }).join('');
   $('#paginasNicho').querySelectorAll('.nicho').forEach(bl => {
@@ -829,10 +856,10 @@ function montar(){
   while (els.length < 3) els.push({});
   $('#elogios').innerHTML = els.map(e => e.texto
     ? '<article class="memo"><span class="clipinho">' + ICONES.clipinho + '</span>' +
-        '<dl class="memo-dados"><div><dt>De:</dt><dd>' + esc(e.marca) + '</dd></div><div><dt>Para:</dt><dd>' + esc(D.nome) + '</dd></div>' +
-        (e.detalhe ? '<div><dt>Ref.:</dt><dd>' + esc(e.detalhe) + '</dd></div>' : '') + '</dl>' +
+        '<dl class="memo-dados"><div><dt>' + esc(T('de')) + '</dt><dd>' + esc(e.marca) + '</dd></div><div><dt>' + esc(T('para')) + '</dt><dd>' + esc(D.nome) + '</dd></div>' +
+        (e.detalhe ? '<div><dt>' + esc(T('ref')) + '</dt><dd>' + esc(e.detalhe) + '</dd></div>' : '') + '</dl>' +
         '<blockquote>' + esc(e.texto) + '</blockquote>' +
-        '<span class="carimbo" aria-hidden="true">Aprovado</span></article>'
+        '<span class="carimbo" aria-hidden="true">' + esc(T('aprovado')) + '</span></article>'
     : '<div class="memo vazio">' + ICONES.aspas + '<span>cole aqui a frase ou o print real da marca</span></div>'
   ).join('');
   $('#logos').innerHTML = marcas.length
@@ -840,14 +867,14 @@ function montar(){
     : lacuna('coloque aqui os logos das marcas que você já atendeu (DADOS.marcas)');
 
   // 6. contato: carta no envelope
-  $('#cartaDe').textContent = 'De: ' + D.nome;
+  $('#cartaDe').textContent = T('de') + ' ' + D.nome;
   if (D.instagram) $('#selo').textContent = D.instagram; else $('#selo').remove();
   // botões: WhatsApp + e-mail de parcerias; embaixo, as redes sociais
   $('#contatoBtns').innerHTML = botaoContatoPrincipal('btn-p') +
-    (D.whatsapp && D.email ? '<a class="btn btn-s" href="' + esc(linkEmail()) + '">' + ICONES.mail + 'Mandar e-mail</a>' : '');
+    (D.whatsapp && D.email ? '<a class="btn btn-s" href="' + esc(linkEmail()) + '">' + ICONES.mail + esc(T('email')) + '</a>' : '');
   if (redesCapa.length){
-    $('#redesCarta').innerHTML = '<span class="rotulo">Minhas redes</span>' + redesCapa.map(r =>
-      '<a class="rede" href="' + esc(r.url) + '" target="_blank" rel="noopener" aria-label="Meu ' + r.nome + '" title="' + r.nome + '">' + r.icone + '</a>').join('');
+    $('#redesCarta').innerHTML = '<span class="rotulo">' + esc(T('minhasRedes')) + '</span>' + redesCapa.map(r =>
+      '<a class="rede" href="' + esc(r.url) + '" target="_blank" rel="noopener" aria-label="' + esc(T('meu')) + ' ' + r.nome + '" title="' + r.nome + '">' + r.icone + '</a>').join('');
   } else $('#redesCarta').remove();
   if (!(D.duvidas || []).length) $('#duvidas').remove();
   else $('#duvidas').innerHTML = D.duvidas.map(d => '<div class="duvida"><h3>' + esc(d.pergunta) + '</h3><p>' + (d.resposta ? esc(d.resposta) : lacuna('sua resposta curta')) + '</p></div>').join('');
@@ -857,7 +884,7 @@ function montar(){
   const zap = $('#zap');
   const w = linkWhats();
   if (w){ zap.href = w; zap.innerHTML = ICONES.zap; }
-  else if (D.email){ zap.href = linkEmail(); zap.innerHTML = ICONES.mail; zap.removeAttribute('target'); zap.setAttribute('aria-label', 'Mandar e-mail'); }
+  else if (D.email){ zap.href = linkEmail(); zap.innerHTML = ICONES.mail; zap.removeAttribute('target'); zap.setAttribute('aria-label', T('email')); }
   else zap.remove();
 
   // player
@@ -912,6 +939,94 @@ function montarFormulario(){
     } catch(e){
       box.innerHTML = '<div class="form"><div class="form-msg"><strong>Não consegui enviar agora.</strong><p>Me chama direto que eu respondo rapidinho:</p>' + botaoContatoPrincipal('btn-p') + '</div></div>';
     }
+  });
+}
+
+/* ====================================================================
+   IDIOMA (PT / EN)
+   - O botão PT / EN do menu troca o idioma e lembra da escolha.
+   - O link com ?lang=en abre o site direto em inglês (bom pra mandar pra marcas de fora).
+   - Sem escolha salva, o site abre em português, ou em inglês se o navegador da pessoa não for em português.
+   ==================================================================== */
+const LANG = (() => {
+  try {
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q === 'pt' || q === 'en'){ localStorage.setItem('idioma', q); return q; }
+    const salvo = localStorage.getItem('idioma');
+    if (salvo === 'pt' || salvo === 'en') return salvo;
+  } catch(e){}
+  return /^pt/i.test(navigator.language || 'pt') ? 'pt' : 'en';
+})();
+
+function trocarIdioma(novo){
+  if (novo === LANG) return;
+  try { localStorage.setItem('idioma', novo); sessionStorage.setItem('rolagem', String(window.scrollY)); } catch(e){}
+  const u = new URL(location.href);
+  u.searchParams.set('lang', novo);
+  location.replace(u.toString());
+}
+
+const TEXTOS = {
+  pt: {
+    tituloPagina: 'Denise Zini · portfólio UGC',
+    mSobre: 'Sobre mim', mDestaques: 'Destaques', mNichos: 'Nichos', mFeedbacks: 'Feedbacks', mMarcas: 'Marcas', mContato: 'Contato',
+    falar: 'Falar comigo', menu: 'Menu', fechar: 'Fechar',
+    tagCapa: '✦ UGC creator · Influencer digital',
+    carimbo: 'ALTO EM CRIATIVIDADE ★', carimboAria: 'Carimbo: alto em criatividade',
+    verVideos: 'Ver meus melhores vídeos', meAcompanhe: 'Me acompanhe', suaCreator: 'Sua creator',
+    redesAria: 'Minhas redes sociais', meu: 'Meu',
+    prazer: 'Prazer, eu sou a {nome}.',
+    fichaN: 'Ficha nº 001', fichaTipo: 'Creator UGC', obs: 'Obs.:', difs: 'Diferenciais:',
+    tDestaques: 'Meus melhores vídeos', top1: '✦ Top 1', abrirVideo: 'Abrir vídeo',
+    tNichos: 'Ache o vídeo do seu nicho', atalhosAria: 'Atalhos dos nichos',
+    video: 'vídeo', videos: 'vídeos', minimo: 'mínimo 3 vídeos',
+    anteriores: 'Vídeos anteriores de ', proximos: 'Próximos vídeos de ',
+    tFeedbacks: 'Feedbacks de marcas', de: 'De:', para: 'Para:', ref: 'Ref.:', aprovado: 'Aprovado',
+    atendidas: 'Marcas que eu já atendi',
+    cartaPara: 'Para: sua marca', tContato: 'Vamos trabalhar juntos?',
+    whats: 'Chamar no WhatsApp', email: 'Mandar e-mail', minhasRedes: 'Minhas redes',
+    assuntoEmail: 'Vídeos UGC pra minha marca',
+    msgContato: 'Oi, {nome}! Vi seu portfólio e quero conversar sobre vídeos pra minha marca.',
+    rodape: 'Influencer digital & UGC creator',
+    zapAria: 'Falar comigo no WhatsApp', videoAria: 'Vídeo', fecharVideo: 'Fechar vídeo'
+  },
+  en: {
+    tituloPagina: 'Denise Zini · UGC portfolio',
+    mSobre: 'About me', mDestaques: 'Highlights', mNichos: 'Niches', mFeedbacks: 'Feedback', mMarcas: 'Brands', mContato: 'Contact',
+    falar: "Let's talk", menu: 'Menu', fechar: 'Close',
+    tagCapa: '✦ UGC creator · Digital influencer',
+    carimbo: 'HIGH IN CREATIVITY ★', carimboAria: 'Stamp: high in creativity',
+    verVideos: 'See my best videos', meAcompanhe: 'Follow me', suaCreator: 'Your creator',
+    redesAria: 'My social media', meu: 'My',
+    prazer: "Nice to meet you, I'm {nome}.",
+    fichaN: 'File no. 001', fichaTipo: 'UGC creator', obs: 'Notes:', difs: 'What sets me apart:',
+    tDestaques: 'My best videos', top1: '✦ Top 1', abrirVideo: 'Open video',
+    tNichos: 'Find a video in your niche', atalhosAria: 'Niche shortcuts',
+    video: 'video', videos: 'videos', minimo: 'minimum 3 videos',
+    anteriores: 'Previous videos: ', proximos: 'Next videos: ',
+    tFeedbacks: 'Brand feedback', de: 'From:', para: 'To:', ref: 'Re:', aprovado: 'Approved',
+    atendidas: "Brands I've worked with",
+    cartaPara: 'To: your brand', tContato: 'Shall we work together?',
+    whats: 'Message me on WhatsApp', email: 'Send an email', minhasRedes: 'My socials',
+    assuntoEmail: 'UGC videos for my brand',
+    msgContato: "Hi, {nome}! I saw your portfolio and I'd like to talk about videos for my brand.",
+    rodape: 'Digital influencer & UGC creator',
+    zapAria: 'Message me on WhatsApp', videoAria: 'Video', fecharVideo: 'Close video'
+  }
+};
+function T(chave){ const t = TEXTOS[LANG] || TEXTOS.pt; return t[chave] != null ? t[chave] : (TEXTOS.pt[chave] || ''); }
+
+// Junta os DADOS com a versão em inglês (DADOS.en) quando o site está em inglês
+function dadosNoIdioma(){
+  if (LANG !== 'en' || !DADOS.en) return DADOS;
+  const en = DADOS.en, nomes = en.nichos || {};
+  return Object.assign({}, DADOS, en, {
+    nichos: DADOS.nichos.map(n => Object.assign({}, n, {
+      nomeExibido: nomes[n.nome] || n.nome,
+      videos: (n.videos || []).map(v => Object.assign({}, v, { titulo: (en.titulos || {})[v.titulo] || v.titulo }))
+    })),
+    destaques: DADOS.destaques.map(d => Object.assign({}, d, { nicho: nomes[d.nicho] || d.nicho })),
+    elogios: (DADOS.elogios || []).map((e, i) => Object.assign({}, e, (en.elogios || [])[i] || {}))
   });
 }
 
@@ -1120,7 +1235,60 @@ const DADOS = {
 
   // Dúvidas no fim do contato. Lista vazia = a parte não aparece.
   // Pra voltar a mostrar: { pergunta: "Qual o prazo?", resposta: "De 3 a 5 dias úteis." }
-  duvidas: []
+  duvidas: [],
+
+  /* ------------------------------------------------------------------
+     VERSÃO EM INGLÊS (aparece quando a pessoa clica em EN no menu).
+     Só entra aqui o que muda de idioma. Se mudar um texto em português
+     lá em cima, lembre de mudar a tradução aqui também.
+     ------------------------------------------------------------------ */
+  en: {
+    ano: "Portfolio 2026",
+    provas: [
+      { numero: "+250", texto: "videos created" },
+      { numero: "+40",  texto: "brands worked with" }
+    ],
+    ficha: [
+      { campo: "Name", valor: "Denise Zini" },
+      { campo: "Age", valor: "25" },
+      { campo: "City", valor: "Mirassol, SP, Brazil" },
+      { campo: "Marital status", valor: "Married" },
+      { campo: "Faith", valor: "Christian" },
+      { campo: "Education", valor: "Law degree" },
+      { campo: "Experience", valor: "5 years creating content" }
+    ],
+    sobreTexto: "I'm a digital influencer and UGC creator. I've been creating content for 5 years, and after finishing law school I chose to build my career online.\n\nI also share content creation and video editing tips to help other creators deliver high-quality content.",
+    diferenciais: [
+      "I show the product in my real, everyday routine, in a natural way",
+      "I explain the product in a clear, simple way that anyone can understand",
+      "Delivery in 3 to 5 business days, always on time"
+    ],
+    // nome dos nichos em inglês (à esquerda, igual ao nome em português lá em cima)
+    nichos: {
+      "Moda e beleza": "Fashion & beauty",
+      "Casa e decoração": "Home & decor",
+      "Tecnologia": "Tech",
+      "Papelaria": "Stationery",
+      "Jogos e casal": "Games & couples",
+      "Marketplaces": "Marketplaces",
+      "Experiências e eventos": "Experiences & events",
+      "Campanhas promocionais": "Promotional campaigns"
+    },
+    // títulos dos vídeos que aparecem na página (só os vídeos sem @ da marca mostram o título)
+    titulos: {
+      "Ideia de date: noite de investigação": "Date idea: mystery night",
+      "Jogos em casal": "Couple games"
+    },
+    // depoimentos traduzidos, na mesma ordem dos elogios lá em cima
+    elogios: [
+      { texto: "Denise's work on the Estudei videos is simply flawless. She presents the platform in a super organic, spontaneous and clear way, all with polished, very professional editing. You can tell how much care goes into every piece of content. Highly recommend!",
+        detalhe: "Laura Amorim · videos about the platform" },
+      { texto: "Denise is a great professional. She brings her personal touch to her posts, making the content feel more organic, and explains everything in a very clear and accessible way, which won our team over from her very first videos. She is also very punctual and dedicated, and delivers everything with high quality and on schedule. We highly recommend her!",
+        detalhe: "Nathália, Gran team" },
+      { texto: "We really liked the idea of showing the Photobook and the puzzle in couple moments. That “date night” approach made the products fit naturally into her content.",
+        detalhe: "Wesley Carvalho, marketing · Photobook and puzzle" }
+    ]
+  }
 };
 </script>
 </body>
