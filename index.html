@@ -637,11 +637,14 @@ function cardVideo(item, opcoes){
   let caixa;
   if (temVideo){
     const auto = opcoes.auto ? ' muted autoplay loop playsinline' : ' muted loop playsinline';
-    const poster = item.capa ? ' poster="' + esc(item.capa) + '"' : '';
+    // miniatura: a "capa" escolhida, ou a imagem .jpg com o mesmo nome do vídeo (gerada automaticamente).
+    // Com a miniatura, o vídeo só é baixado quando a pessoa toca/passa o mouse: a página abre rápida e sem tela preta.
+    const miniatura = item.capa || String(item.video).replace(/\.mp4$/i, '.jpg');
+    const poster = ' poster="' + esc(miniatura) + '"';
     caixa = '<div class="vbox" role="button" tabindex="0" data-video="' + esc(item.video) + '" data-titulo="' + esc(item.titulo || 'video') + '" aria-label="' + esc(T('abrirVideo')) + ' ' + esc(item.titulo || '') + '">' +
       (opcoes.extra || '') +
       (FOTO_CAPA ? '<video preload="none"></video>' :
-      '<video src="' + esc(videoSrc(item.video)) + '" preload="metadata"' + poster + auto + (opcoes.auto ? ' data-auto="1"' : '') + '></video>') +
+      '<video src="' + esc(videoSrc(item.video)) + '" preload="none"' + poster + auto + (opcoes.auto ? ' data-auto="1"' : '') + '></video>') +
       (item.res ? '<span class="res">' + esc(item.res) + '</span>' : '') +
       '<span class="play">' + ICONES.play + '</span></div>';
   } else {
@@ -674,6 +677,7 @@ function abrirPlayer(src, titulo){
   const p = $('#player'), pv = $('#playerVideo');
   focoAntes = document.activeElement;
   document.querySelectorAll('.vbox video').forEach(v => v.pause());
+  pv.poster = String(src).replace(/\.mp4(#.*)?$/i, '.jpg'); // mostra a miniatura enquanto o vídeo carrega
   pv.src = src; pv.muted = false;
   p.classList.add('aberto');
   document.body.style.overflow = 'hidden';
