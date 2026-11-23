@@ -180,8 +180,8 @@ html.foto-capa .capa{padding:58px 0 0}
 .faixa{padding:12px 0;overflow:hidden}
 .faixa-trilho{display:flex;align-items:center;width:max-content;animation:rola 60s linear infinite}
 .faixa-item{display:flex;align-items:center;padding:0 18px}
-.bola{width:56px;height:56px;border-radius:50%;background:#fff;border:1px solid var(--linha);overflow:hidden;display:block;flex:none;box-shadow:0 4px 12px rgba(15,16,21,.08)}
-.bola img{width:100%;height:100%;object-fit:cover}
+.bola{width:56px;height:56px;border-radius:50%;background:transparent;border:0;overflow:hidden;display:block;flex:none;box-shadow:0 4px 12px rgba(15,16,21,.12)}
+.bola img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)} /* leve zoom: some qualquer fiozinho claro na borda */
 .faixa-vazia{text-align:center}
 @keyframes rola{to{transform:translateX(-50%)}}
 
@@ -256,6 +256,7 @@ html.foto-capa .capa{padding:58px 0 0}
 .memo.vazio svg{width:26px;height:26px;opacity:.7}
 .atendidas{margin-top:48px;padding-top:32px;border-top:1px dashed rgba(15,16,21,.25);text-align:center}
 .atendidas h3{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--tinta);margin-bottom:24px;letter-spacing:.12em;text-transform:uppercase}
+.bloco-agencias{margin-top:40px;padding-top:32px;border-top:1px dashed rgba(15,16,21,.25)}
 .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;max-width:880px;margin:0 auto}
 .logos .bola{width:64px;height:64px;box-shadow:0 4px 12px rgba(15,16,21,.08)}
 
@@ -547,6 +548,10 @@ html.foto-capa .capa{padding:58px 0 0}
         <div class="atendidas" id="atendidas">
           <h3 data-t="atendidas">Marcas que eu já atendi</h3>
           <div class="logos" id="logos"></div>
+          <div class="bloco-agencias" id="blocoAgencias">
+            <h3 data-t="agencias">Agências que confiaram no meu trabalho</h3>
+            <div class="logos" id="logosAgencias"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -902,6 +907,9 @@ function montar(){
   $('#logos').innerHTML = marcas.length
     ? marcas.map(bola).join('')
     : lacuna('coloque aqui os logos das marcas que você já atendeu (DADOS.marcas)');
+  const agencias = (D.agencias || []).filter(a => a && a.logo);
+  if (agencias.length) $('#logosAgencias').innerHTML = agencias.map(bola).join('');
+  else $('#blocoAgencias').remove();
 
   // 6. contato: carta no envelope
   $('#cartaDe').textContent = T('de') + ' ' + D.nome;
@@ -1020,7 +1028,7 @@ const TEXTOS = {
     anteriores: 'Vídeos anteriores de ', proximos: 'Próximos vídeos de ',
     feedbacks: 'feedbacks', feedAnt: 'Feedbacks anteriores', feedProx: 'Próximos feedbacks',
     tFeedbacks: 'Feedbacks de marcas', de: 'De:', para: 'Para:', ref: 'Ref.:', aprovado: 'Aprovado',
-    atendidas: 'Marcas que eu já atendi',
+    atendidas: 'Marcas que eu já atendi', agencias: 'Agências que confiaram no meu trabalho',
     cartaPara: 'Para: sua marca', tContato: 'Vamos trabalhar juntos?',
     whats: 'Chamar no WhatsApp', email: 'Mandar e-mail', minhasRedes: 'Minhas redes',
     assuntoEmail: 'Vídeos UGC pra minha marca',
@@ -1044,7 +1052,7 @@ const TEXTOS = {
     anteriores: 'Previous videos: ', proximos: 'Next videos: ',
     feedbacks: 'reviews', feedAnt: 'Previous reviews', feedProx: 'Next reviews',
     tFeedbacks: 'Brand feedback', de: 'From:', para: 'To:', ref: 'Re:', aprovado: 'Approved',
-    atendidas: "Brands I've worked with",
+    atendidas: "Brands I've worked with", agencias: 'Agencies that trusted my work',
     cartaPara: 'To: your brand', tContato: 'Shall we work together?',
     whats: 'Message me on WhatsApp', email: 'Send an email', minhasRedes: 'My socials',
     assuntoEmail: 'UGC videos for my brand',
@@ -1247,7 +1255,20 @@ const DADOS = {
     { texto: "A Denise foi super profissional e entregou um vídeo acima das expectativas <3",
       marca: "Ahead Company", detalhe: "Avaliação ★★★★★" },
     { texto: "Ameii, seu conteúdo e sua pontualidade, isso faz toda a diferença para a campanha! Vídeo ficou super bom e me deixou com vontade de comprar essa escova kkkkkk arrasou, parabéns!!",
-      marca: "Thecoathers", detalhe: "Laís" }
+      marca: "The Coachers", detalhe: "Laís" }
+  ],
+
+  // Agências que confiaram no seu trabalho (aparece abaixo das marcas, com o mesmo visual de logos redondos).
+  // Mesmo formato das marcas: { nome: "Agência X", logo: "midia/logos/agencias/agencia-x.png" }
+  agencias: [
+    { nome: "MIS", logo: "midia/logos/agencias/mis.png" },
+    { nome: "Ablelive", logo: "midia/logos/agencias/ablelive.png" },
+    { nome: "Agência Ecco", logo: "midia/logos/agencias/agencia-ecco.png" },
+    { nome: "The Coachers", logo: "midia/logos/agencias/the-coachers.png" },
+    { nome: "Seu Influencer UGC", logo: "midia/logos/agencias/seu-influencer-ugc.png" },
+    { nome: "Agência parceira", logo: "midia/logos/agencias/agencia-dragoes.png" },
+    { nome: "Agência parceira", logo: "midia/logos/agencias/agencia-co.png" },
+    { nome: "Agência parceira", logo: "midia/logos/agencias/agencia-esfera.png" }
   ],
 
   // Marcas que você já atendeu. No site aparecem SÓ os logos (o nome fica escondido, pra leitores de tela).
